@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		86D2D82E2C90B1E200AAAC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D82D2C90B1E200AAAC01 /* AppDelegate.swift */; };
+		86D2D8302C90B1E200AAAC01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D82F2C90B1E200AAAC01 /* SceneDelegate.swift */; };
+		86D2D8322C90B1E200AAAC01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8312C90B1E200AAAC01 /* ViewController.swift */; };
+		86D2D8352C90B1E200AAAC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8332C90B1E200AAAC01 /* Main.storyboard */; };
+		86D2D8372C90B1E800AAAC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8362C90B1E800AAAC01 /* Assets.xcassets */; };
+		86D2D83A2C90B1E800AAAC01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8382C90B1E800AAAC01 /* LaunchScreen.storyboard */; };
+		86D2D8452C90B1E900AAAC01 /* Ember_BusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8442C90B1E900AAAC01 /* Ember_BusTests.swift */; };
+		86D2D84F2C90B1E900AAAC01 /* Ember_BusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D84E2C90B1E900AAAC01 /* Ember_BusUITests.swift */; };
+		86D2D8512C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8502C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86D2D8412C90B1E900AAAC01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86D2D8222C90B1E200AAAC01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86D2D8292C90B1E200AAAC01;
+			remoteInfo = "Ember Bus";
+		};
+		86D2D84B2C90B1E900AAAC01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86D2D8222C90B1E200AAAC01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86D2D8292C90B1E200AAAC01;
+			remoteInfo = "Ember Bus";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		86D2D82A2C90B1E200AAAC01 /* Ember Bus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ember Bus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D2D82D2C90B1E200AAAC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		86D2D82F2C90B1E200AAAC01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		86D2D8312C90B1E200AAAC01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		86D2D8342C90B1E200AAAC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		86D2D8362C90B1E800AAAC01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86D2D8392C90B1E800AAAC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86D2D83B2C90B1E800AAAC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86D2D8402C90B1E900AAAC01 /* Ember BusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ember BusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D2D8442C90B1E900AAAC01 /* Ember_BusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ember_BusTests.swift; sourceTree = "<group>"; };
+		86D2D84A2C90B1E900AAAC01 /* Ember BusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ember BusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D2D84E2C90B1E900AAAC01 /* Ember_BusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ember_BusUITests.swift; sourceTree = "<group>"; };
+		86D2D8502C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ember_BusUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86D2D8272C90B1E200AAAC01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86D2D83D2C90B1E900AAAC01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86D2D8472C90B1E900AAAC01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86D2D8212C90B1E200AAAC01 = {
+			isa = PBXGroup;
+			children = (
+				86D2D82C2C90B1E200AAAC01 /* Ember Bus */,
+				86D2D8432C90B1E900AAAC01 /* Ember BusTests */,
+				86D2D84D2C90B1E900AAAC01 /* Ember BusUITests */,
+				86D2D82B2C90B1E200AAAC01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86D2D82B2C90B1E200AAAC01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86D2D82A2C90B1E200AAAC01 /* Ember Bus.app */,
+				86D2D8402C90B1E900AAAC01 /* Ember BusTests.xctest */,
+				86D2D84A2C90B1E900AAAC01 /* Ember BusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86D2D82C2C90B1E200AAAC01 /* Ember Bus */ = {
+			isa = PBXGroup;
+			children = (
+				86D2D82D2C90B1E200AAAC01 /* AppDelegate.swift */,
+				86D2D82F2C90B1E200AAAC01 /* SceneDelegate.swift */,
+				86D2D8312C90B1E200AAAC01 /* ViewController.swift */,
+				86D2D8332C90B1E200AAAC01 /* Main.storyboard */,
+				86D2D8362C90B1E800AAAC01 /* Assets.xcassets */,
+				86D2D8382C90B1E800AAAC01 /* LaunchScreen.storyboard */,
+				86D2D83B2C90B1E800AAAC01 /* Info.plist */,
+			);
+			path = "Ember Bus";
+			sourceTree = "<group>";
+		};
+		86D2D8432C90B1E900AAAC01 /* Ember BusTests */ = {
+			isa = PBXGroup;
+			children = (
+				86D2D8442C90B1E900AAAC01 /* Ember_BusTests.swift */,
+			);
+			path = "Ember BusTests";
+			sourceTree = "<group>";
+		};
+		86D2D84D2C90B1E900AAAC01 /* Ember BusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86D2D84E2C90B1E900AAAC01 /* Ember_BusUITests.swift */,
+				86D2D8502C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift */,
+			);
+			path = "Ember BusUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86D2D8292C90B1E200AAAC01 /* Ember Bus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86D2D8542C90B1E900AAAC01 /* Build configuration list for PBXNativeTarget "Ember Bus" */;
+			buildPhases = (
+				86D2D8262C90B1E200AAAC01 /* Sources */,
+				86D2D8272C90B1E200AAAC01 /* Frameworks */,
+				86D2D8282C90B1E200AAAC01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ember Bus";
+			productName = "Ember Bus";
+			productReference = 86D2D82A2C90B1E200AAAC01 /* Ember Bus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86D2D83F2C90B1E900AAAC01 /* Ember BusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86D2D8572C90B1E900AAAC01 /* Build configuration list for PBXNativeTarget "Ember BusTests" */;
+			buildPhases = (
+				86D2D83C2C90B1E900AAAC01 /* Sources */,
+				86D2D83D2C90B1E900AAAC01 /* Frameworks */,
+				86D2D83E2C90B1E900AAAC01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86D2D8422C90B1E900AAAC01 /* PBXTargetDependency */,
+			);
+			name = "Ember BusTests";
+			productName = "Ember BusTests";
+			productReference = 86D2D8402C90B1E900AAAC01 /* Ember BusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		86D2D8492C90B1E900AAAC01 /* Ember BusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86D2D85A2C90B1E900AAAC01 /* Build configuration list for PBXNativeTarget "Ember BusUITests" */;
+			buildPhases = (
+				86D2D8462C90B1E900AAAC01 /* Sources */,
+				86D2D8472C90B1E900AAAC01 /* Frameworks */,
+				86D2D8482C90B1E900AAAC01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86D2D84C2C90B1E900AAAC01 /* PBXTargetDependency */,
+			);
+			name = "Ember BusUITests";
+			productName = "Ember BusUITests";
+			productReference = 86D2D84A2C90B1E900AAAC01 /* Ember BusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86D2D8222C90B1E200AAAC01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					86D2D8292C90B1E200AAAC01 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					86D2D83F2C90B1E900AAAC01 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 86D2D8292C90B1E200AAAC01;
+					};
+					86D2D8492C90B1E900AAAC01 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 86D2D8292C90B1E200AAAC01;
+					};
+				};
+			};
+			buildConfigurationList = 86D2D8252C90B1E200AAAC01 /* Build configuration list for PBXProject "Ember Bus" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86D2D8212C90B1E200AAAC01;
+			productRefGroup = 86D2D82B2C90B1E200AAAC01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86D2D8292C90B1E200AAAC01 /* Ember Bus */,
+				86D2D83F2C90B1E900AAAC01 /* Ember BusTests */,
+				86D2D8492C90B1E900AAAC01 /* Ember BusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86D2D8282C90B1E200AAAC01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86D2D83A2C90B1E800AAAC01 /* LaunchScreen.storyboard in Resources */,
+				86D2D8372C90B1E800AAAC01 /* Assets.xcassets in Resources */,
+				86D2D8352C90B1E200AAAC01 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86D2D83E2C90B1E900AAAC01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86D2D8482C90B1E900AAAC01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86D2D8262C90B1E200AAAC01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86D2D8322C90B1E200AAAC01 /* ViewController.swift in Sources */,
+				86D2D82E2C90B1E200AAAC01 /* AppDelegate.swift in Sources */,
+				86D2D8302C90B1E200AAAC01 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86D2D83C2C90B1E900AAAC01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86D2D8452C90B1E900AAAC01 /* Ember_BusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86D2D8462C90B1E900AAAC01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86D2D84F2C90B1E900AAAC01 /* Ember_BusUITests.swift in Sources */,
+				86D2D8512C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86D2D8422C90B1E900AAAC01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86D2D8292C90B1E200AAAC01 /* Ember Bus */;
+			targetProxy = 86D2D8412C90B1E900AAAC01 /* PBXContainerItemProxy */;
+		};
+		86D2D84C2C90B1E900AAAC01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86D2D8292C90B1E200AAAC01 /* Ember Bus */;
+			targetProxy = 86D2D84B2C90B1E900AAAC01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		86D2D8332C90B1E200AAAC01 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86D2D8342C90B1E200AAAC01 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		86D2D8382C90B1E800AAAC01 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86D2D8392C90B1E800AAAC01 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		86D2D8522C90B1E900AAAC01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		86D2D8532C90B1E900AAAC01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86D2D8552C90B1E900AAAC01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQG5NJNPF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ember Bus/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.activatedapps.Ember-Bus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86D2D8562C90B1E900AAAC01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQG5NJNPF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ember Bus/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.activatedapps.Ember-Bus";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86D2D8582C90B1E900AAAC01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQG5NJNPF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.activatedapps.Ember-BusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ember Bus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ember Bus";
+			};
+			name = Debug;
+		};
+		86D2D8592C90B1E900AAAC01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQG5NJNPF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.activatedapps.Ember-BusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ember Bus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ember Bus";
+			};
+			name = Release;
+		};
+		86D2D85B2C90B1E900AAAC01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQG5NJNPF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.activatedapps.Ember-BusUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ember Bus";
+			};
+			name = Debug;
+		};
+		86D2D85C2C90B1E900AAAC01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQG5NJNPF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.activatedapps.Ember-BusUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ember Bus";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86D2D8252C90B1E200AAAC01 /* Build configuration list for PBXProject "Ember Bus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86D2D8522C90B1E900AAAC01 /* Debug */,
+				86D2D8532C90B1E900AAAC01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86D2D8542C90B1E900AAAC01 /* Build configuration list for PBXNativeTarget "Ember Bus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86D2D8552C90B1E900AAAC01 /* Debug */,
+				86D2D8562C90B1E900AAAC01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86D2D8572C90B1E900AAAC01 /* Build configuration list for PBXNativeTarget "Ember BusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86D2D8582C90B1E900AAAC01 /* Debug */,
+				86D2D8592C90B1E900AAAC01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86D2D85A2C90B1E900AAAC01 /* Build configuration list for PBXNativeTarget "Ember BusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86D2D85B2C90B1E900AAAC01 /* Debug */,
+				86D2D85C2C90B1E900AAAC01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 86D2D8222C90B1E200AAAC01 /* Project object */;
+}
