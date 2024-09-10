@@ -13,7 +13,7 @@
 		86D2D8352C90B1E200AAAC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8332C90B1E200AAAC01 /* Main.storyboard */; };
 		86D2D8372C90B1E800AAAC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8362C90B1E800AAAC01 /* Assets.xcassets */; };
 		86D2D83A2C90B1E800AAAC01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8382C90B1E800AAAC01 /* LaunchScreen.storyboard */; };
-		86D2D8452C90B1E900AAAC01 /* Ember_BusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8442C90B1E900AAAC01 /* Ember_BusTests.swift */; };
+		86D2D8452C90B1E900AAAC01 /* EmberBusQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8442C90B1E900AAAC01 /* EmberBusQuotesTests.swift */; };
 		86D2D84F2C90B1E900AAAC01 /* Ember_BusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D84E2C90B1E900AAAC01 /* Ember_BusUITests.swift */; };
 		86D2D8512C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8502C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift */; };
 		86D2D8622C90B4C000AAAC01 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8612C90B4C000AAAC01 /* Quotes.swift */; };
@@ -49,7 +49,7 @@
 		86D2D8392C90B1E800AAAC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86D2D83B2C90B1E800AAAC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86D2D8402C90B1E900AAAC01 /* Ember BusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ember BusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86D2D8442C90B1E900AAAC01 /* Ember_BusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ember_BusTests.swift; sourceTree = "<group>"; };
+		86D2D8442C90B1E900AAAC01 /* EmberBusQuotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmberBusQuotesTests.swift; sourceTree = "<group>"; };
 		86D2D84A2C90B1E900AAAC01 /* Ember BusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ember BusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D2D84E2C90B1E900AAAC01 /* Ember_BusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ember_BusUITests.swift; sourceTree = "<group>"; };
 		86D2D8502C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ember_BusUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		86D2D8432C90B1E900AAAC01 /* Ember BusTests */ = {
 			isa = PBXGroup;
 			children = (
-				86D2D8442C90B1E900AAAC01 /* Ember_BusTests.swift */,
+				86D2D8442C90B1E900AAAC01 /* EmberBusQuotesTests.swift */,
 				86D2D8652C90B86F00AAAC01 /* ExampleTrip.json */,
 				86D2D8672C90B89900AAAC01 /* ExampleQuotes.json */,
 			);
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86D2D8452C90B1E900AAAC01 /* Ember_BusTests.swift in Sources */,
+				86D2D8452C90B1E900AAAC01 /* EmberBusQuotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
