@@ -17,18 +17,18 @@ struct Trip: Codable {
 // MARK: - Description
 struct Description: Codable {
     let routeNumber: String
-    let patternID: Int
+    let patternId: Int
     let calendarDate, type: String
     let isCancelled: Bool
-    let routeID: Int
+    let routeId: Int
 
     enum CodingKeys: String, CodingKey {
         case routeNumber
-        case patternID
+        case patternId
         case calendarDate
         case type
         case isCancelled
-        case routeID
+        case routeId
     }
 }
 
@@ -67,10 +67,10 @@ struct Location: Codable {
     let name, regionName, code, codeDetail: String
     let detailedName: String
     let lon, lat: Double
-    let googlePlaceID, atcoCode: String
+    let googlePlaceId, atcoCode: String
     let timezone: String
     let zone: [Zone]
-    let heading, areaID: Int
+    let heading, areaId: Int
     let direction, localName: String?
 
     enum CodingKeys: String, CodingKey {
@@ -80,10 +80,10 @@ struct Location: Codable {
         case codeDetail
         case detailedName
         case lon, lat
-        case googlePlaceID
+        case googlePlaceId
         case atcoCode
         case timezone, zone, heading
-        case areaID
+        case areaId
         case direction
         case localName
     }
@@ -105,17 +105,17 @@ struct Location: Codable {
 // MARK: - StopReplacement
 struct TripStopReplacement: Codable {
     let description: String
-    let originalLocationID: Int
+    let originalLocationId: Int
     let originalLocationAtcoCode: String
-    let replacementLocationID: Int
+    let replacementLocationId: Int
     let useStopName, isCancelled: Bool
     let arrivalDelay: Int
 
     enum CodingKeys: String, CodingKey {
         case description
-        case originalLocationID
+        case originalLocationId
         case originalLocationAtcoCode
-        case replacementLocationID
+        case replacementLocationId
         case useStopName
         case isCancelled
         case arrivalDelay
@@ -129,7 +129,7 @@ struct Vehicle: Codable {
     let hasWifi, hasToilet: Bool
     let type, brand, colour: String
     let isBackupVehicle: Bool
-    let ownerID: Int
+    let ownerId: Int
     let gps: Gps
 
     enum CodingKeys: String, CodingKey {
@@ -140,7 +140,7 @@ struct Vehicle: Codable {
         case hasToilet
         case type, brand, colour
         case isBackupVehicle
-        case ownerID
+        case ownerId
         case gps
     }
 }

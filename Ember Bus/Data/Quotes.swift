@@ -71,15 +71,18 @@ struct Arrival: Codable {
 }
 
 // MARK: - Description
+// MARK: - BusDescription
 struct BusDescription: Codable {
-    let brand, descriptionOperator, destinationBoard, numberPlate: String
+    let brand: String
+    let descriptionOperator: String // Renamed property
+    let destinationBoard, numberPlate: String
     let vehicleType, colour: String
     let amenities: Amenities
     let isElectric: Bool
 
     enum CodingKeys: String, CodingKey {
         case brand
-        case descriptionOperator
+        case descriptionOperator = "operator" // Map the "operator" key to the "descriptionOperator" property as is reserved swift keyword
         case destinationBoard
         case numberPlate
         case vehicleType
@@ -87,6 +90,7 @@ struct BusDescription: Codable {
         case isElectric
     }
 }
+
 
 // MARK: - Amenities
 struct Amenities: Codable {
@@ -103,7 +107,7 @@ struct Destination: Codable {
     let id: Int
     let atcoCode: String
     let detailedName: String
-    let googlePlaceID: String
+    let googlePlaceId: String
     let lat, lon: Double
     let name: String
     let regionName: String
@@ -114,7 +118,7 @@ struct Destination: Codable {
     let heading: Int
     let zone: [Zone]
     let stopReplacement: StopReplacement?
-    let areaID, locationTimeID, bookingCutOffMins: Int
+    let areaId, locationTimeId, bookingCutOffMins: Int
     let preBookedOnly, skipped: Bool
     let bookable: Date
 
@@ -122,15 +126,15 @@ struct Destination: Codable {
         case id
         case atcoCode
         case detailedName
-        case googlePlaceID
+        case googlePlaceId
         case lat, lon, name
         case regionName
         case type, code
         case codeDetail
         case timezone, heading, zone
         case stopReplacement
-        case areaID
-        case locationTimeID
+        case areaId
+        case locationTimeId 
         case bookingCutOffMins
         case preBookedOnly
         case skipped, bookable
@@ -138,18 +142,20 @@ struct Destination: Codable {
 }
 
 
+
+
 // MARK: - StopReplacement
 struct StopReplacement: Codable {
     let useStopName, isCancelled: Bool
-    let arrivalDelay, originalLocationID, replacementLocationID: Int
+    let arrivalDelay, originalLocationId, replacementLocationId: Int
     let description: String
 
     enum CodingKeys: String, CodingKey {
         case useStopName
         case isCancelled
         case arrivalDelay
-        case originalLocationID
-        case replacementLocationID
+        case originalLocationId
+        case replacementLocationId
         case description
     }
 }

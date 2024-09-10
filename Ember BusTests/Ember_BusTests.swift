@@ -32,6 +32,7 @@ final class Ember_BusTests: XCTestCase {
             // Attempt to decode the JSON into the Quotes struct
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601 // Assuming the date is in ISO 8601 format
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             
             let quotes = try decoder.decode(Quotes.self, from: data)
             
