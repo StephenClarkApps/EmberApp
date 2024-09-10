@@ -20,6 +20,7 @@
 		86D2D8642C90B66F00AAAC01 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8632C90B66F00AAAC01 /* Trip.swift */; };
 		86D2D8662C90B86F00AAAC01 /* ExampleTrip.json in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8652C90B86F00AAAC01 /* ExampleTrip.json */; };
 		86D2D8682C90B89900AAAC01 /* ExampleQuotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8672C90B89900AAAC01 /* ExampleQuotes.json */; };
+		86D2D86A2C90C3CC00AAAC01 /* EmberBusTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8692C90C3CC00AAAC01 /* EmberBusTripTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		86D2D8632C90B66F00AAAC01 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		86D2D8652C90B86F00AAAC01 /* ExampleTrip.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleTrip.json; sourceTree = "<group>"; };
 		86D2D8672C90B89900AAAC01 /* ExampleQuotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleQuotes.json; sourceTree = "<group>"; };
+		86D2D8692C90C3CC00AAAC01 /* EmberBusTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmberBusTripTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				86D2D8442C90B1E900AAAC01 /* EmberBusQuotesTests.swift */,
+				86D2D8692C90C3CC00AAAC01 /* EmberBusTripTests.swift */,
 				86D2D8652C90B86F00AAAC01 /* ExampleTrip.json */,
 				86D2D8672C90B89900AAAC01 /* ExampleQuotes.json */,
 			);
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D2D8452C90B1E900AAAC01 /* EmberBusQuotesTests.swift in Sources */,
+				86D2D86A2C90C3CC00AAAC01 /* EmberBusTripTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
