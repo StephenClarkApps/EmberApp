@@ -1,0 +1,158 @@
+//
+//  Trip.swift
+//  Ember Bus
+//
+//  Created by Stephen Clark on 10/09/2024.
+//
+
+import Foundation
+
+// MARK: - Trip
+struct Trip: Codable {
+    let route: [Route]
+    let vehicle: Vehicle
+    let description: Description
+}
+
+// MARK: - Description
+struct Description: Codable {
+    let routeNumber: String
+    let patternID: Int
+    let calendarDate, type: String
+    let isCancelled: Bool
+    let routeID: Int
+
+    enum CodingKeys: String, CodingKey {
+        case routeNumber
+        case patternID
+        case calendarDate
+        case type
+        case isCancelled
+        case routeID
+    }
+}
+
+// MARK: - Route
+struct Route: Codable {
+    let id: Int
+    let departure, arrival: TripArrival
+    let location: Location
+    let allowBoarding, allowDropOff: Bool
+    let bookingCutOffMins: Int
+    let preBookedOnly, skipped: Bool
+    let stopReplacement: TripStopReplacement?
+
+    enum CodingKeys: String, CodingKey {
+        case id, departure, arrival, location
+        case allowBoarding
+        case allowDropOff
+        case bookingCutOffMins
+        case preBookedOnly
+        case skipped
+        case stopReplacement
+    }
+}
+
+// MARK: - Arrival
+struct TripArrival: Codable {
+    let scheduled: Date
+    let actual: Date?
+    let estimated: Date
+}
+
+// MARK: - Location
+struct Location: Codable {
+    let id: Int
+    let type: String
+    let name, regionName, code, codeDetail: String
+    let detailedName: String
+    let lon, lat: Double
+    let googlePlaceID, atcoCode: String
+    let timezone: String
+    let zone: [Zone]
+    let heading, areaID: Int
+    let direction, localName: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, type, name
+        case regionName
+        case code
+        case codeDetail
+        case detailedName
+        case lon, lat
+        case googlePlaceID
+        case atcoCode
+        case timezone, zone, heading
+        case areaID
+        case direction
+        case localName
+    }
+}
+
+//enum Timezone: String, Codable {
+//    case europeLondon = "Europe/London"
+//}
+//
+//enum TypeEnum: String, Codable {
+//    case stopPoint = "STOP_POINT"
+//}
+
+// MARK: - Zone
+//struct Zone: Codable {
+//    let latitude, longitude: Double
+//}
+
+// MARK: - StopReplacement
+struct TripStopReplacement: Codable {
+    let description: String
+    let originalLocationID: Int
+    let originalLocationAtcoCode: String
+    let replacementLocationID: Int
+    let useStopName, isCancelled: Bool
+    let arrivalDelay: Int
+
+    enum CodingKeys: String, CodingKey {
+        case description
+        case originalLocationID
+        case originalLocationAtcoCode
+        case replacementLocationID
+        case useStopName
+        case isCancelled
+        case arrivalDelay
+    }
+}
+
+// MARK: - Vehicle
+struct Vehicle: Codable {
+    let bicycle, wheelchair, seat, id: Int
+    let plateNumber, name: String
+    let hasWifi, hasToilet: Bool
+    let type, brand, colour: String
+    let isBackupVehicle: Bool
+    let ownerID: Int
+    let gps: Gps
+
+    enum CodingKeys: String, CodingKey {
+        case bicycle, wheelchair, seat, id
+        case plateNumber
+        case name
+        case hasWifi
+        case hasToilet
+        case type, brand, colour
+        case isBackupVehicle
+        case ownerID
+        case gps
+    }
+}
+
+// MARK: - Gps
+struct Gps: Codable {
+    let lastUpdated: Date
+    let longitude, latitude: Double
+    let heading: Int
+
+    enum CodingKeys: String, CodingKey {
+        case lastUpdated
+        case longitude, latitude, heading
+    }
+}

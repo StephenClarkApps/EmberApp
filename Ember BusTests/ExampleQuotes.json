@@ -1,0 +1,715 @@
+{
+    "quotes": [
+        {
+            "availability": {
+                "seat": 17,
+                "wheelchair": 1,
+                "bicycle": 1
+            },
+            "prices": {
+                "adult": 850,
+                "child": 425,
+                "young_child": 0,
+                "concession": 0,
+                "seat": 0,
+                "wheelchair": 0,
+                "bicycle": 0
+            },
+            "legs": [
+                {
+                    "type": "scheduled_transit",
+                    "trip_uid": "u3yz2TSdHwKbJJY25PCbuU",
+                    "adds_capacity_for_trip_uid": null,
+                    "origin": {
+                        "id": 1,
+                        "atco_code": "640014188",
+                        "detailed_name": "Greenmarket",
+                        "google_place_id": "ChIJqR8vVb5chkgRK2nyU6tGED0",
+                        "lat": 56.45612,
+                        "lon": -2.97472,
+                        "name": "Dundee Greenmarket",
+                        "region_name": "Dundee",
+                        "type": "STOP_POINT",
+                        "code": "DUN",
+                        "code_detail": "Greenmarket",
+                        "timezone": "Europe/London",
+                        "heading": 225,
+                        "zone": [
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            },
+                            {
+                                "longitude": -2.97628033214073,
+                                "latitude": 56.45528686305822
+                            },
+                            {
+                                "longitude": -2.977106041739419,
+                                "latitude": 56.4561072307844
+                            },
+                            {
+                                "longitude": -2.974754020458306,
+                                "latitude": 56.45668332112649
+                            },
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            }
+                        ],
+                        "area_id": 13,
+                        "location_time_id": 1196828,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T10:40:00+00:00"
+                    },
+                    "destination": {
+                        "id": 175,
+                        "atco_code": "6200206490",
+                        "detailed_name": "George Street (Stop GL)",
+                        "google_place_id": "ChIJ1QuappHHh0gRScSpuwtgb-s",
+                        "lat": 55.95395,
+                        "lon": -3.19549,
+                        "name": "George Street",
+                        "region_name": "Edinburgh",
+                        "type": "STOP_POINT",
+                        "code": "EDI",
+                        "code_detail": "George Street",
+                        "timezone": "Europe/London",
+                        "heading": 75,
+                        "zone": [
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            },
+                            {
+                                "longitude": -3.19581977130998,
+                                "latitude": 55.95377939447385
+                            },
+                            {
+                                "longitude": -3.195124451156287,
+                                "latitude": 55.95389942984703
+                            },
+                            {
+                                "longitude": -3.195210121329124,
+                                "latitude": 55.954050314770164
+                            },
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            }
+                        ],
+                        "stop_replacement": {
+                            "use_stop_name": true,
+                            "is_cancelled": false,
+                            "arrival_delay": 0,
+                            "original_location_id": 30,
+                            "replacement_location_id": 175,
+                            "description": "Due to a road closure your service will call at George Street instead of St Andrew Square. We're sorry for any inconvenience."
+                        },
+                        "area_id": 42,
+                        "location_time_id": 1196840,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T12:34:00+00:00"
+                    },
+                    "departure": {
+                        "scheduled": "2024-09-10T10:40:00+00:00",
+                        "actual": "2024-09-10T10:41:03+00:00",
+                        "estimated": "2024-09-10T10:40:57+00:00"
+                    },
+                    "arrival": {
+                        "scheduled": "2024-09-10T12:34:00+00:00",
+                        "actual": "2024-09-10T12:53:47+00:00",
+                        "estimated": "2024-09-10T12:53:36+00:00"
+                    },
+                    "description": {
+                        "brand": "Ember",
+                        "operator": "Ember",
+                        "destination_board": "E1",
+                        "number_plate": "SG23 ORN",
+                        "vehicle_type": "coach",
+                        "colour": "Black",
+                        "amenities": {
+                            "has_wifi": true,
+                            "has_toilet": true
+                        },
+                        "is_electric": true
+                    },
+                    "trip_type": "public"
+                }
+            ],
+            "bookable": true
+        },
+        {
+            "availability": {
+                "seat": 19,
+                "wheelchair": 1,
+                "bicycle": 2
+            },
+            "prices": {
+                "adult": 850,
+                "child": 425,
+                "young_child": 0,
+                "concession": 0,
+                "seat": 0,
+                "wheelchair": 0,
+                "bicycle": 0
+            },
+            "legs": [
+                {
+                    "type": "scheduled_transit",
+                    "trip_uid": "3gfDngpkabaFQUt8QyJdQA",
+                    "adds_capacity_for_trip_uid": null,
+                    "origin": {
+                        "id": 1,
+                        "atco_code": "640014188",
+                        "detailed_name": "Greenmarket",
+                        "google_place_id": "ChIJqR8vVb5chkgRK2nyU6tGED0",
+                        "lat": 56.45612,
+                        "lon": -2.97472,
+                        "name": "Dundee Greenmarket",
+                        "region_name": "Dundee",
+                        "type": "STOP_POINT",
+                        "code": "DUN",
+                        "code_detail": "Greenmarket",
+                        "timezone": "Europe/London",
+                        "heading": 225,
+                        "zone": [
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            },
+                            {
+                                "longitude": -2.97628033214073,
+                                "latitude": 56.45528686305822
+                            },
+                            {
+                                "longitude": -2.977106041739419,
+                                "latitude": 56.4561072307844
+                            },
+                            {
+                                "longitude": -2.974754020458306,
+                                "latitude": 56.45668332112649
+                            },
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            }
+                        ],
+                        "area_id": 13,
+                        "location_time_id": 1196854,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T11:40:00+00:00"
+                    },
+                    "destination": {
+                        "id": 175,
+                        "atco_code": "6200206490",
+                        "detailed_name": "George Street (Stop GL)",
+                        "google_place_id": "ChIJ1QuappHHh0gRScSpuwtgb-s",
+                        "lat": 55.95395,
+                        "lon": -3.19549,
+                        "name": "George Street",
+                        "region_name": "Edinburgh",
+                        "type": "STOP_POINT",
+                        "code": "EDI",
+                        "code_detail": "George Street",
+                        "timezone": "Europe/London",
+                        "heading": 75,
+                        "zone": [
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            },
+                            {
+                                "longitude": -3.19581977130998,
+                                "latitude": 55.95377939447385
+                            },
+                            {
+                                "longitude": -3.195124451156287,
+                                "latitude": 55.95389942984703
+                            },
+                            {
+                                "longitude": -3.195210121329124,
+                                "latitude": 55.954050314770164
+                            },
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            }
+                        ],
+                        "stop_replacement": {
+                            "use_stop_name": true,
+                            "is_cancelled": false,
+                            "arrival_delay": 0,
+                            "original_location_id": 30,
+                            "replacement_location_id": 175,
+                            "description": "Due to a road closure your service will call at George Street instead of St Andrew Square. We're sorry for any inconvenience."
+                        },
+                        "area_id": 42,
+                        "location_time_id": 1196866,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T13:35:00+00:00"
+                    },
+                    "departure": {
+                        "scheduled": "2024-09-10T11:40:00+00:00",
+                        "actual": "2024-09-10T11:41:40+00:00",
+                        "estimated": "2024-09-10T11:40:00+00:00"
+                    },
+                    "arrival": {
+                        "scheduled": "2024-09-10T13:35:00+00:00",
+                        "actual": "2024-09-10T13:41:28+00:00",
+                        "estimated": "2024-09-10T13:41:23+00:00"
+                    },
+                    "description": {
+                        "brand": "Ember",
+                        "operator": "Ember",
+                        "destination_board": "E1",
+                        "number_plate": "SG72 NCA",
+                        "vehicle_type": "coach",
+                        "colour": "black",
+                        "amenities": {
+                            "has_wifi": true,
+                            "has_toilet": true
+                        },
+                        "is_electric": true
+                    },
+                    "trip_type": "public"
+                }
+            ],
+            "bookable": true
+        },
+        {
+            "availability": {
+                "seat": 32,
+                "wheelchair": 1,
+                "bicycle": 2
+            },
+            "prices": {
+                "adult": 850,
+                "child": 425,
+                "young_child": 0,
+                "concession": 0,
+                "seat": 0,
+                "wheelchair": 0,
+                "bicycle": 0
+            },
+            "legs": [
+                {
+                    "type": "scheduled_transit",
+                    "trip_uid": "3poCt9KsCpicF4NdcvY2cF",
+                    "adds_capacity_for_trip_uid": null,
+                    "origin": {
+                        "id": 1,
+                        "atco_code": "640014188",
+                        "detailed_name": "Greenmarket",
+                        "google_place_id": "ChIJqR8vVb5chkgRK2nyU6tGED0",
+                        "lat": 56.45612,
+                        "lon": -2.97472,
+                        "name": "Dundee Greenmarket",
+                        "region_name": "Dundee",
+                        "type": "STOP_POINT",
+                        "code": "DUN",
+                        "code_detail": "Greenmarket",
+                        "timezone": "Europe/London",
+                        "heading": 225,
+                        "zone": [
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            },
+                            {
+                                "longitude": -2.97628033214073,
+                                "latitude": 56.45528686305822
+                            },
+                            {
+                                "longitude": -2.977106041739419,
+                                "latitude": 56.4561072307844
+                            },
+                            {
+                                "longitude": -2.974754020458306,
+                                "latitude": 56.45668332112649
+                            },
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            }
+                        ],
+                        "area_id": 13,
+                        "location_time_id": 1197209,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T12:36:00+00:00"
+                    },
+                    "destination": {
+                        "id": 175,
+                        "atco_code": "6200206490",
+                        "detailed_name": "George Street (Stop GL)",
+                        "google_place_id": "ChIJ1QuappHHh0gRScSpuwtgb-s",
+                        "lat": 55.95395,
+                        "lon": -3.19549,
+                        "name": "George Street",
+                        "region_name": "Edinburgh",
+                        "type": "STOP_POINT",
+                        "code": "EDI",
+                        "code_detail": "George Street",
+                        "timezone": "Europe/London",
+                        "heading": 75,
+                        "zone": [
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            },
+                            {
+                                "longitude": -3.19581977130998,
+                                "latitude": 55.95377939447385
+                            },
+                            {
+                                "longitude": -3.195124451156287,
+                                "latitude": 55.95389942984703
+                            },
+                            {
+                                "longitude": -3.195210121329124,
+                                "latitude": 55.954050314770164
+                            },
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            }
+                        ],
+                        "stop_replacement": {
+                            "use_stop_name": true,
+                            "is_cancelled": false,
+                            "arrival_delay": 0,
+                            "original_location_id": 30,
+                            "replacement_location_id": 175,
+                            "description": "Due to a road closure your service will call at George Street instead of St Andrew Square. We're sorry for any inconvenience."
+                        },
+                        "area_id": 42,
+                        "location_time_id": 1197211,
+                        "booking_cut_off_mins": 10,
+                        "pre_booked_only": true,
+                        "skipped": false,
+                        "bookable": "2024-09-10T13:54:00+00:00"
+                    },
+                    "departure": {
+                        "scheduled": "2024-09-10T12:36:00+00:00",
+                        "actual": "2024-09-10T12:39:12+00:00",
+                        "estimated": "2024-09-10T12:36:00+00:00"
+                    },
+                    "arrival": {
+                        "scheduled": "2024-09-10T14:04:00+00:00",
+                        "actual": "2024-09-10T14:14:11+00:00",
+                        "estimated": "2024-09-10T14:13:34+00:00"
+                    },
+                    "description": {
+                        "brand": "Ember",
+                        "operator": "Ember",
+                        "destination_board": "E1X",
+                        "number_plate": "SG72 NCE",
+                        "vehicle_type": "coach",
+                        "colour": "black",
+                        "amenities": {
+                            "has_wifi": true,
+                            "has_toilet": true
+                        },
+                        "is_electric": true
+                    },
+                    "trip_type": "public"
+                }
+            ],
+            "bookable": true
+        },
+        {
+            "availability": {
+                "seat": 28,
+                "wheelchair": 1,
+                "bicycle": 2
+            },
+            "prices": {
+                "adult": 850,
+                "child": 425,
+                "young_child": 0,
+                "concession": 0,
+                "seat": 0,
+                "wheelchair": 0,
+                "bicycle": 0
+            },
+            "legs": [
+                {
+                    "type": "scheduled_transit",
+                    "trip_uid": "kfYebWcHkzjjbCwWJQbofz",
+                    "adds_capacity_for_trip_uid": null,
+                    "origin": {
+                        "id": 1,
+                        "atco_code": "640014188",
+                        "detailed_name": "Greenmarket",
+                        "google_place_id": "ChIJqR8vVb5chkgRK2nyU6tGED0",
+                        "lat": 56.45612,
+                        "lon": -2.97472,
+                        "name": "Dundee Greenmarket",
+                        "region_name": "Dundee",
+                        "type": "STOP_POINT",
+                        "code": "DUN",
+                        "code_detail": "Greenmarket",
+                        "timezone": "Europe/London",
+                        "heading": 225,
+                        "zone": [
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            },
+                            {
+                                "longitude": -2.97628033214073,
+                                "latitude": 56.45528686305822
+                            },
+                            {
+                                "longitude": -2.977106041739419,
+                                "latitude": 56.4561072307844
+                            },
+                            {
+                                "longitude": -2.974754020458306,
+                                "latitude": 56.45668332112649
+                            },
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            }
+                        ],
+                        "area_id": 13,
+                        "location_time_id": 1196880,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T12:40:00+00:00"
+                    },
+                    "destination": {
+                        "id": 175,
+                        "atco_code": "6200206490",
+                        "detailed_name": "George Street (Stop GL)",
+                        "google_place_id": "ChIJ1QuappHHh0gRScSpuwtgb-s",
+                        "lat": 55.95395,
+                        "lon": -3.19549,
+                        "name": "George Street",
+                        "region_name": "Edinburgh",
+                        "type": "STOP_POINT",
+                        "code": "EDI",
+                        "code_detail": "George Street",
+                        "timezone": "Europe/London",
+                        "heading": 75,
+                        "zone": [
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            },
+                            {
+                                "longitude": -3.19581977130998,
+                                "latitude": 55.95377939447385
+                            },
+                            {
+                                "longitude": -3.195124451156287,
+                                "latitude": 55.95389942984703
+                            },
+                            {
+                                "longitude": -3.195210121329124,
+                                "latitude": 55.954050314770164
+                            },
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            }
+                        ],
+                        "stop_replacement": {
+                            "use_stop_name": true,
+                            "is_cancelled": false,
+                            "arrival_delay": 0,
+                            "original_location_id": 30,
+                            "replacement_location_id": 175,
+                            "description": "Due to a road closure your service will call at George Street instead of St Andrew Square. We're sorry for any inconvenience."
+                        },
+                        "area_id": 42,
+                        "location_time_id": 1196892,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T14:35:00+00:00"
+                    },
+                    "departure": {
+                        "scheduled": "2024-09-10T12:40:00+00:00",
+                        "actual": "2024-09-10T12:40:10+00:00",
+                        "estimated": "2024-09-10T12:40:00+00:00"
+                    },
+                    "arrival": {
+                        "scheduled": "2024-09-10T14:35:00+00:00",
+                        "actual": "2024-09-10T14:35:36+00:00",
+                        "estimated": "2024-09-10T14:35:32+00:00"
+                    },
+                    "description": {
+                        "brand": "Ember",
+                        "operator": "Ember",
+                        "destination_board": "E1",
+                        "number_plate": "SG22 LTU",
+                        "vehicle_type": "coach",
+                        "colour": "black",
+                        "amenities": {
+                            "has_wifi": true,
+                            "has_toilet": true
+                        },
+                        "is_electric": true
+                    },
+                    "trip_type": "public"
+                }
+            ],
+            "bookable": true
+        },
+        {
+            "availability": {
+                "seat": 20,
+                "wheelchair": 1,
+                "bicycle": 1
+            },
+            "prices": {
+                "adult": 850,
+                "child": 425,
+                "young_child": 0,
+                "concession": 0,
+                "seat": 0,
+                "wheelchair": 0,
+                "bicycle": 0
+            },
+            "legs": [
+                {
+                    "type": "scheduled_transit",
+                    "trip_uid": "KT9omHomdLwRHJVAXAekrD",
+                    "adds_capacity_for_trip_uid": null,
+                    "origin": {
+                        "id": 1,
+                        "atco_code": "640014188",
+                        "detailed_name": "Greenmarket",
+                        "google_place_id": "ChIJqR8vVb5chkgRK2nyU6tGED0",
+                        "lat": 56.45612,
+                        "lon": -2.97472,
+                        "name": "Dundee Greenmarket",
+                        "region_name": "Dundee",
+                        "type": "STOP_POINT",
+                        "code": "DUN",
+                        "code_detail": "Greenmarket",
+                        "timezone": "Europe/London",
+                        "heading": 225,
+                        "zone": [
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            },
+                            {
+                                "longitude": -2.97628033214073,
+                                "latitude": 56.45528686305822
+                            },
+                            {
+                                "longitude": -2.977106041739419,
+                                "latitude": 56.4561072307844
+                            },
+                            {
+                                "longitude": -2.974754020458306,
+                                "latitude": 56.45668332112649
+                            },
+                            {
+                                "longitude": -2.973928310859618,
+                                "latitude": 56.456125665810674
+                            }
+                        ],
+                        "area_id": 13,
+                        "location_time_id": 1196906,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T13:35:00+00:00"
+                    },
+                    "destination": {
+                        "id": 175,
+                        "atco_code": "6200206490",
+                        "detailed_name": "George Street (Stop GL)",
+                        "google_place_id": "ChIJ1QuappHHh0gRScSpuwtgb-s",
+                        "lat": 55.95395,
+                        "lon": -3.19549,
+                        "name": "George Street",
+                        "region_name": "Edinburgh",
+                        "type": "STOP_POINT",
+                        "code": "EDI",
+                        "code_detail": "George Street",
+                        "timezone": "Europe/London",
+                        "heading": 75,
+                        "zone": [
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            },
+                            {
+                                "longitude": -3.19581977130998,
+                                "latitude": 55.95377939447385
+                            },
+                            {
+                                "longitude": -3.195124451156287,
+                                "latitude": 55.95389942984703
+                            },
+                            {
+                                "longitude": -3.195210121329124,
+                                "latitude": 55.954050314770164
+                            },
+                            {
+                                "longitude": -3.195900884778076,
+                                "latitude": 55.953931988302834
+                            }
+                        ],
+                        "stop_replacement": {
+                            "use_stop_name": true,
+                            "is_cancelled": false,
+                            "arrival_delay": 0,
+                            "original_location_id": 30,
+                            "replacement_location_id": 175,
+                            "description": "Due to a road closure your service will call at George Street instead of St Andrew Square. We're sorry for any inconvenience."
+                        },
+                        "area_id": 42,
+                        "location_time_id": 1196918,
+                        "booking_cut_off_mins": 0,
+                        "pre_booked_only": false,
+                        "skipped": false,
+                        "bookable": "2024-09-10T15:34:00+00:00"
+                    },
+                    "departure": {
+                        "scheduled": "2024-09-10T13:35:00+00:00",
+                        "actual": "2024-09-10T13:36:25+00:00",
+                        "estimated": "2024-09-10T13:35:00+00:00"
+                    },
+                    "arrival": {
+                        "scheduled": "2024-09-10T15:34:00+00:00",
+                        "actual": "2024-09-10T15:40:22+00:00",
+                        "estimated": "2024-09-10T15:40:32+00:00"
+                    },
+                    "description": {
+                        "brand": "Ember",
+                        "operator": "Ember",
+                        "destination_board": "E1",
+                        "number_plate": "SG23 ORP",
+                        "vehicle_type": "coach",
+                        "colour": "Black",
+                        "amenities": {
+                            "has_wifi": true,
+                            "has_toilet": true
+                        },
+                        "is_electric": true
+                    },
+                    "trip_type": "public"
+                }
+            ],
+            "bookable": true
+        }
+    ],
+    "min_card_transaction": 30
+}

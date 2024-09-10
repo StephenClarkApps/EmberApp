@@ -18,12 +18,35 @@ final class Ember_BusTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testQuotesDecoding() {
+        // Load the JSON file from the test bundle
+        guard let url = Bundle(for: type(of: self)).url(forResource: "ExampleQuotes", withExtension: "json") else {
+            XCTFail("Missing file: ExampleQuotes.json")
+            return
+        }
+        
+        do {
+            // Read the data from the file
+            let data = try Data(contentsOf: url)
+            
+            // Attempt to decode the JSON into the Quotes struct
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601 // Assuming the date is in ISO 8601 format
+            
+            let quotes = try decoder.decode(Quotes.self, from: data)
+            
+            // Assert that the quotes array is not empty
+            XCTAssertFalse(quotes.quotes.isEmpty, "Quotes array should not be empty")
+            
+            // Further assertions based on the expected content of your JSON file
+            if let firstQuote = quotes.quotes.first {
+                XCTAssertEqual(firstQuote.availability.seat, 17, "Expected 17 seats available")
+                XCTAssertEqual(firstQuote.prices.adult, 850, "Expected adult price of 850")
+            }
+            
+        } catch {
+            XCTFail("Failed to decode Quotes JSON: \(error.localizedDescription)")
+        }
     }
 
     func testPerformanceExample() throws {

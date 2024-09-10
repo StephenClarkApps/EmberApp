@@ -1,0 +1,772 @@
+{
+    "route": [
+        {
+            "id": 1196854,
+            "departure": {
+                "scheduled": "2024-09-10T11:40:00+00:00",
+                "actual": "2024-09-10T11:41:40+00:00",
+                "estimated": "2024-09-10T11:40:00+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T11:40:00+00:00",
+                "actual": "2024-09-10T11:31:49+00:00",
+                "estimated": "2024-09-10T11:40:00+00:00"
+            },
+            "location": {
+                "id": 1,
+                "type": "STOP_POINT",
+                "name": "Dundee Greenmarket",
+                "region_name": "Dundee",
+                "code": "DUN",
+                "code_detail": "Greenmarket",
+                "detailed_name": "Greenmarket",
+                "lon": -2.97472,
+                "lat": 56.45612,
+                "google_place_id": "ChIJqR8vVb5chkgRK2nyU6tGED0",
+                "atco_code": "640014188",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.456125665810674,
+                        "longitude": -2.9739283108596175
+                    },
+                    {
+                        "latitude": 56.45528686305822,
+                        "longitude": -2.97628033214073
+                    },
+                    {
+                        "latitude": 56.4561072307844,
+                        "longitude": -2.9771060417394186
+                    },
+                    {
+                        "latitude": 56.45668332112649,
+                        "longitude": -2.9747540204583056
+                    },
+                    {
+                        "latitude": 56.456125665810674,
+                        "longitude": -2.9739283108596175
+                    }
+                ],
+                "heading": 225.0,
+                "area_id": 13
+            },
+            "allow_boarding": true,
+            "allow_drop_off": false,
+            "booking_cut_off_mins": 0,
+            "pre_booked_only": false,
+            "skipped": false
+        },
+        {
+            "id": 1196855,
+            "departure": {
+                "scheduled": "2024-09-10T11:50:00+00:00",
+                "actual": "2024-09-10T11:56:06+00:00",
+                "estimated": "2024-09-10T11:54:27+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T11:50:00+00:00",
+                "actual": "2024-09-10T11:54:08+00:00",
+                "estimated": "2024-09-10T11:54:27+00:00"
+            },
+            "location": {
+                "id": 2,
+                "type": "STOP_POINT",
+                "name": "Dundee West",
+                "region_name": "Dundee West",
+                "code": "DUN",
+                "code_detail": "Dundee West",
+                "detailed_name": "Apollo Way",
+                "lon": -3.05468,
+                "lat": 56.462677,
+                "google_place_id": "ChIJE2gJVwlDhkgRBp7tM4HaqS0",
+                "atco_code": "6400L00019",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.46256507145948,
+                        "longitude": -3.0550262330871196
+                    },
+                    {
+                        "latitude": 56.462403053205456,
+                        "longitude": -3.0547294020652775
+                    },
+                    {
+                        "latitude": 56.46270436715984,
+                        "longitude": -3.0541500449180607
+                    },
+                    {
+                        "latitude": 56.462859468797895,
+                        "longitude": -3.054468333612022
+                    },
+                    {
+                        "latitude": 56.46256507145948,
+                        "longitude": -3.0550262330871196
+                    }
+                ],
+                "heading": 45.0,
+                "area_id": 14
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": false
+        },
+        {
+            "id": 1196856,
+            "departure": {
+                "scheduled": "2024-09-10T11:56:00+00:00",
+                "estimated": "2024-09-10T12:00:06+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T11:56:00+00:00",
+                "estimated": "2024-09-10T12:00:06+00:00"
+            },
+            "location": {
+                "id": 33,
+                "type": "STOP_POINT",
+                "name": "Longforgan",
+                "region_name": "Longforgan",
+                "code": "LFG",
+                "code_detail": "Longforgan",
+                "detailed_name": "Westbound Slip Road",
+                "direction": "WESTBOUND",
+                "lon": -3.1286,
+                "lat": 56.45718,
+                "google_place_id": "ChIJFT_RJGdBhkgRYxkAqkW68GY",
+                "atco_code": "64804203",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.457394470261235,
+                        "longitude": -3.1286752219602927
+                    },
+                    {
+                        "latitude": 56.45716919447582,
+                        "longitude": -3.128925561904907
+                    },
+                    {
+                        "latitude": 56.456884633679266,
+                        "longitude": -3.1281888482772047
+                    },
+                    {
+                        "latitude": 56.457157337818515,
+                        "longitude": -3.1278240678511793
+                    },
+                    {
+                        "latitude": 56.457394470261235,
+                        "longitude": -3.1286752219602927
+                    }
+                ],
+                "heading": 270.0,
+                "area_id": 47
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": true
+        },
+        {
+            "id": 1196857,
+            "departure": {
+                "scheduled": "2024-09-10T11:58:00+00:00",
+                "actual": "2024-09-10T12:04:29+00:00",
+                "estimated": "2024-09-10T12:04:02+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T11:58:00+00:00",
+                "actual": "2024-09-10T12:03:34+00:00",
+                "estimated": "2024-09-10T12:04:02+00:00"
+            },
+            "location": {
+                "id": 3,
+                "type": "STOP_POINT",
+                "name": "Inchture",
+                "region_name": "Inchture",
+                "code": "INCT",
+                "code_detail": "Inchture",
+                "detailed_name": "Road End (Westbound)",
+                "direction": "WESTBOUND",
+                "lon": -3.170071,
+                "lat": 56.447108,
+                "google_place_id": "ChIJa-OPGCRBhkgRqINJzMi0mc0",
+                "atco_code": "64800191",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.44792778370844,
+                        "longitude": -3.169394731085048
+                    },
+                    {
+                        "latitude": 56.447749890193236,
+                        "longitude": -3.1689512727461984
+                    },
+                    {
+                        "latitude": 56.445903701655475,
+                        "longitude": -3.171147107641445
+                    },
+                    {
+                        "latitude": 56.44614090434802,
+                        "longitude": -3.171762228012084
+                    },
+                    {
+                        "latitude": 56.44792778370844,
+                        "longitude": -3.169394731085048
+                    }
+                ],
+                "heading": 225.0,
+                "area_id": 15
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": false
+        },
+        {
+            "id": 1196858,
+            "departure": {
+                "scheduled": "2024-09-10T12:08:00+00:00",
+                "estimated": "2024-09-10T12:12:29+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T12:08:00+00:00",
+                "estimated": "2024-09-10T12:12:29+00:00"
+            },
+            "location": {
+                "id": 31,
+                "type": "STOP_POINT",
+                "name": "St Madoes",
+                "region_name": "St Madoes",
+                "code": "STMD",
+                "code_detail": "St Madoes",
+                "detailed_name": "St Madoes Green",
+                "direction": "WESTBOUND",
+                "lon": -3.30666,
+                "lat": 56.37536,
+                "google_place_id": "ChIJ-7_7UqQ5hkgR54w_LXj3974",
+                "atco_code": "64801650",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.37553553466398,
+                        "longitude": -3.3067435026168814
+                    },
+                    {
+                        "latitude": 56.37543057572143,
+                        "longitude": -3.30636441696697
+                    },
+                    {
+                        "latitude": 56.37495132566275,
+                        "longitude": -3.306421637535095
+                    },
+                    {
+                        "latitude": 56.37523451962018,
+                        "longitude": -3.3070760965347286
+                    },
+                    {
+                        "latitude": 56.37553553466398,
+                        "longitude": -3.3067435026168814
+                    }
+                ],
+                "heading": 315.0,
+                "area_id": 46
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": true
+        },
+        {
+            "id": 1196859,
+            "departure": {
+                "scheduled": "2024-09-10T12:13:00+00:00",
+                "actual": "2024-09-10T12:17:32+00:00",
+                "estimated": "2024-09-10T12:16:29+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T12:13:00+00:00",
+                "actual": "2024-09-10T12:16:45+00:00",
+                "estimated": "2024-09-10T12:16:29+00:00"
+            },
+            "location": {
+                "id": 5,
+                "type": "STOP_POINT",
+                "name": "Walnut Grove",
+                "region_name": "Walnut Grove",
+                "code": "WLGV",
+                "code_detail": "Walnut Grove",
+                "detailed_name": "West Road End (for Perth)",
+                "lon": -3.404654,
+                "lat": 56.382796,
+                "google_place_id": "ChIJHTQF-6o7hkgRW4XWXa1kbdc",
+                "atco_code": "64801647",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.38307990585553,
+                        "longitude": -3.4051787853240962
+                    },
+                    {
+                        "latitude": 56.38290566874258,
+                        "longitude": -3.404105901718139
+                    },
+                    {
+                        "latitude": 56.381618665708096,
+                        "longitude": -3.4047281742095943
+                    },
+                    {
+                        "latitude": 56.381828549392274,
+                        "longitude": -3.405622243662947
+                    },
+                    {
+                        "latitude": 56.38307990585553,
+                        "longitude": -3.4051787853240962
+                    }
+                ],
+                "heading": 180.0,
+                "area_id": 16
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": false
+        },
+        {
+            "id": 1196860,
+            "departure": {
+                "scheduled": "2024-09-10T12:19:00+00:00",
+                "actual": "2024-09-10T12:25:31+00:00",
+                "estimated": "2024-09-10T12:24:46+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T12:19:00+00:00",
+                "actual": "2024-09-10T12:24:55+00:00",
+                "estimated": "2024-09-10T12:24:46+00:00"
+            },
+            "location": {
+                "id": 48,
+                "type": "STOP_POINT",
+                "name": "Bridge of Earn",
+                "region_name": "Bridge of Earn",
+                "code": "BOE",
+                "code_detail": "Bridge of Earn",
+                "detailed_name": "Old Edinburgh Road",
+                "lon": -3.402653,
+                "lat": 56.344795,
+                "google_place_id": "ChIJK_IWfX06hkgRdYmM9l9rUBU",
+                "atco_code": "64802696",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.34488518734358,
+                        "longitude": -3.4022462363645896
+                    },
+                    {
+                        "latitude": 56.344655280875656,
+                        "longitude": -3.40271830515121
+                    },
+                    {
+                        "latitude": 56.34488915135803,
+                        "longitude": -3.403126001248893
+                    },
+                    {
+                        "latitude": 56.345130948022884,
+                        "longitude": -3.402696847479091
+                    },
+                    {
+                        "latitude": 56.34488518734358,
+                        "longitude": -3.4022462363645896
+                    }
+                ],
+                "heading": 135.0,
+                "area_id": 54
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": false
+        },
+        {
+            "id": 1196861,
+            "departure": {
+                "scheduled": "2024-09-10T12:34:00+00:00",
+                "actual": "2024-09-10T12:41:07+00:00",
+                "estimated": "2024-09-10T12:39:55+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T12:34:00+00:00",
+                "actual": "2024-09-10T12:40:09+00:00",
+                "estimated": "2024-09-10T12:39:55+00:00"
+            },
+            "location": {
+                "id": 6,
+                "type": "STOP_POINT",
+                "name": "Kinross P&R",
+                "region_name": "Kinross",
+                "code": "KIN",
+                "code_detail": "Kinross P&R",
+                "detailed_name": "Park & Ride",
+                "lon": -3.433365,
+                "lat": 56.206317,
+                "google_place_id": "ChIJi2G0f3syhkgRpiaZ20yWrj0",
+                "atco_code": "64804323",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.20657269850862,
+                        "longitude": -3.433522582054137
+                    },
+                    {
+                        "latitude": 56.20603563039676,
+                        "longitude": -3.433393836021422
+                    },
+                    {
+                        "latitude": 56.20609232127476,
+                        "longitude": -3.432476520538329
+                    },
+                    {
+                        "latitude": 56.206718899081004,
+                        "longitude": -3.4326803684234615
+                    },
+                    {
+                        "latitude": 56.206638339650894,
+                        "longitude": -3.4335654973983756
+                    },
+                    {
+                        "latitude": 56.20657269850862,
+                        "longitude": -3.433522582054137
+                    }
+                ],
+                "heading": 90.0,
+                "area_id": 17
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": false
+        },
+        {
+            "id": 1196862,
+            "departure": {
+                "scheduled": "2024-09-10T12:51:00+00:00",
+                "estimated": "2024-09-10T12:56:07+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T12:51:00+00:00",
+                "estimated": "2024-09-10T12:56:07+00:00"
+            },
+            "location": {
+                "id": 7,
+                "type": "STOP_POINT",
+                "name": "Rosyth",
+                "region_name": "Rosyth",
+                "code": "ROS",
+                "code_detail": "Rosyth",
+                "detailed_name": "St John's & St Columba's Church",
+                "lon": -3.415373,
+                "lat": 56.036069,
+                "google_place_id": "ChIJF1mMfCbOh0gRv2ekZY5TgDU",
+                "atco_code": "6500D0254",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 56.03619930007082,
+                        "longitude": -3.4157851338386536
+                    },
+                    {
+                        "latitude": 56.036094407234714,
+                        "longitude": -3.4148302674293514
+                    },
+                    {
+                        "latitude": 56.035880624731846,
+                        "longitude": -3.414908945505886
+                    },
+                    {
+                        "latitude": 56.03599351007766,
+                        "longitude": -3.41587632894516
+                    },
+                    {
+                        "latitude": 56.03619930007082,
+                        "longitude": -3.4157851338386536
+                    }
+                ],
+                "heading": 90.0,
+                "area_id": 18
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": true
+        },
+        {
+            "id": 1196863,
+            "departure": {
+                "scheduled": "2024-09-10T13:07:00+00:00",
+                "actual": "2024-09-10T13:14:39+00:00",
+                "estimated": "2024-09-10T13:11:43+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T13:07:00+00:00",
+                "actual": "2024-09-10T13:11:41+00:00",
+                "estimated": "2024-09-10T13:11:43+00:00"
+            },
+            "location": {
+                "id": 25,
+                "type": "STOP_POINT",
+                "name": "Ingliston P&R",
+                "region_name": "Edinburgh",
+                "code": "EDI",
+                "code_detail": "Ingliston P&R",
+                "detailed_name": "Ingliston P&R (Bus Stop)",
+                "local_name": "the bus stop",
+                "lon": -3.35609,
+                "lat": 55.93907,
+                "google_place_id": "ChIJiyELPgHFh0gRNQNkuGaZJ3g",
+                "atco_code": "6200247604",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 55.93912014254329,
+                        "longitude": -3.356469869613648
+                    },
+                    {
+                        "latitude": 55.93924833303975,
+                        "longitude": -3.3559763431549077
+                    },
+                    {
+                        "latitude": 55.93839906325638,
+                        "longitude": -3.355354070663452
+                    },
+                    {
+                        "latitude": 55.93827087013271,
+                        "longitude": -3.3558976645872463
+                    },
+                    {
+                        "latitude": 55.93912014254329,
+                        "longitude": -3.356469869613648
+                    }
+                ],
+                "heading": 315.0,
+                "area_id": 45
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": false
+        },
+        {
+            "id": 1196864,
+            "departure": {
+                "scheduled": "2024-09-10T13:19:00+00:00",
+                "estimated": "2024-09-10T13:24:39+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T13:19:00+00:00",
+                "estimated": "2024-09-10T13:24:39+00:00"
+            },
+            "location": {
+                "id": 26,
+                "type": "STOP_POINT",
+                "name": "Edinburgh Zoo",
+                "region_name": "Edinburgh",
+                "code": "EDI",
+                "code_detail": "Edinburgh Zoo",
+                "detailed_name": "Edinburgh Zoo Stop 2 (Eastbound)",
+                "direction": "EASTBOUND",
+                "lon": -3.266966,
+                "lat": 55.942352,
+                "google_place_id": "ChIJ7fpE0WDGh0gRx_f7n0za1e0",
+                "atco_code": "6200202805",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 55.942327780316454,
+                        "longitude": -3.2677263019286333
+                    },
+                    {
+                        "latitude": 55.94210947302333,
+                        "longitude": -3.267640471240156
+                    },
+                    {
+                        "latitude": 55.94225167340889,
+                        "longitude": -3.2664674520492554
+                    },
+                    {
+                        "latitude": 55.94246196861596,
+                        "longitude": -3.2665425539016724
+                    },
+                    {
+                        "latitude": 55.942327780316454,
+                        "longitude": -3.2677263019286333
+                    }
+                ],
+                "heading": 90.0,
+                "area_id": 44
+            },
+            "allow_boarding": true,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 10,
+            "pre_booked_only": true,
+            "skipped": true
+        },
+        {
+            "id": 1196865,
+            "departure": {
+                "scheduled": "2024-09-10T13:25:00+00:00",
+                "actual": "2024-09-10T13:33:58+00:00",
+                "estimated": "2024-09-10T13:32:39+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T13:25:00+00:00",
+                "actual": "2024-09-10T13:32:39+00:00",
+                "estimated": "2024-09-10T13:32:39+00:00"
+            },
+            "location": {
+                "id": 28,
+                "type": "STOP_POINT",
+                "name": "Haymarket",
+                "region_name": "Edinburgh",
+                "code": "EDI",
+                "code_detail": "Haymarket",
+                "detailed_name": "Haymarket (Stop HB)",
+                "direction": "EASTBOUND",
+                "lon": -3.218346,
+                "lat": 55.945944,
+                "google_place_id": "ChIJtdKcu6XHh0gRj31N-EL5iIg",
+                "atco_code": "6200202930",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 55.945996759992546,
+                        "longitude": -3.217969536672172
+                    },
+                    {
+                        "latitude": 55.94581452078557,
+                        "longitude": -3.217969536672172
+                    },
+                    {
+                        "latitude": 55.94583654976943,
+                        "longitude": -3.219063877950248
+                    },
+                    {
+                        "latitude": 55.94603681237606,
+                        "longitude": -3.219060301562423
+                    },
+                    {
+                        "latitude": 55.945996759992546,
+                        "longitude": -3.217969536672172
+                    }
+                ],
+                "heading": 90.0,
+                "area_id": 43
+            },
+            "allow_boarding": false,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 0,
+            "pre_booked_only": false,
+            "skipped": false
+        },
+        {
+            "id": 1196866,
+            "departure": {
+                "scheduled": "2024-09-10T13:35:00+00:00",
+                "actual": "2024-09-10T13:41:44+00:00",
+                "estimated": "2024-09-10T13:41:23+00:00"
+            },
+            "arrival": {
+                "scheduled": "2024-09-10T13:35:00+00:00",
+                "actual": "2024-09-10T13:41:28+00:00",
+                "estimated": "2024-09-10T13:41:23+00:00"
+            },
+            "location": {
+                "id": 175,
+                "type": "STOP_POINT",
+                "name": "George Street",
+                "region_name": "Edinburgh",
+                "code": "EDI",
+                "code_detail": "George Street",
+                "detailed_name": "George Street (Stop GL)",
+                "lon": -3.19549,
+                "lat": 55.95395,
+                "google_place_id": "ChIJ1QuappHHh0gRScSpuwtgb-s",
+                "atco_code": "6200206490",
+                "timezone": "Europe/London",
+                "zone": [
+                    {
+                        "latitude": 55.953931988302834,
+                        "longitude": -3.1959008847780765
+                    },
+                    {
+                        "latitude": 55.95377939447385,
+                        "longitude": -3.1958197713099805
+                    },
+                    {
+                        "latitude": 55.95389942984703,
+                        "longitude": -3.1951244511562873
+                    },
+                    {
+                        "latitude": 55.954050314770164,
+                        "longitude": -3.1952101213291244
+                    },
+                    {
+                        "latitude": 55.953931988302834,
+                        "longitude": -3.1959008847780765
+                    }
+                ],
+                "heading": 75.0,
+                "area_id": 42
+            },
+            "stop_replacement": {
+                "description": "Due to a road closure your service will call at George Street instead of St Andrew Square. We're sorry for any inconvenience.",
+                "original_location_id": 30,
+                "original_location_atco_code": "6200206520",
+                "replacement_location_id": 175,
+                "use_stop_name": true,
+                "is_cancelled": false,
+                "arrival_delay": 0
+            },
+            "allow_boarding": false,
+            "allow_drop_off": true,
+            "booking_cut_off_mins": 0,
+            "pre_booked_only": false,
+            "skipped": false
+        }
+    ],
+    "vehicle": {
+        "bicycle": 2,
+        "wheelchair": 1,
+        "seat": 40,
+        "id": 23,
+        "plate_number": "SG72 NCA",
+        "name": "Yutong Coach (SG72 NCA)",
+        "has_wifi": true,
+        "has_toilet": true,
+        "type": "coach",
+        "brand": "Ember",
+        "colour": "black",
+        "is_backup_vehicle": false,
+        "owner_id": 1,
+        "gps": {
+            "last_updated": "2024-09-10T18:15:39+01:00",
+            "longitude": -2.89383,
+            "latitude": 56.48389,
+            "heading": 20
+        }
+    },
+    "description": {
+        "route_number": "E1",
+        "pattern_id": 5416,
+        "calendar_date": "2024-09-10",
+        "type": "public",
+        "is_cancelled": false,
+        "route_id": 1
+    }
+}
