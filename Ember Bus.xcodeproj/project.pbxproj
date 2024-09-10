@@ -100,6 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				86D2D82D2C90B1E200AAAC01 /* AppDelegate.swift */,
+				86D2D85F2C90B29D00AAAC01 /* ViewModel */,
+				86D2D85E2C90B29500AAAC01 /* View */,
+				86D2D8602C90B2C600AAAC01 /* Data */,
+				86D2D85D2C90B28F00AAAC01 /* API */,
 				86D2D82F2C90B1E200AAAC01 /* SceneDelegate.swift */,
 				86D2D8312C90B1E200AAAC01 /* ViewController.swift */,
 				86D2D8332C90B1E200AAAC01 /* Main.storyboard */,
@@ -125,6 +129,34 @@
 				86D2D8502C90B1E900AAAC01 /* Ember_BusUITestsLaunchTests.swift */,
 			);
 			path = "Ember BusUITests";
+			sourceTree = "<group>";
+		};
+		86D2D85D2C90B28F00AAAC01 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		86D2D85E2C90B29500AAAC01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		86D2D85F2C90B29D00AAAC01 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		86D2D8602C90B2C600AAAC01 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
