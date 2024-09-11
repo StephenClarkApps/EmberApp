@@ -36,7 +36,7 @@ struct Description: Codable {
 // MARK: - Route
 struct Route: Codable {
     let id: Int
-    let departure, arrival: TripArrival
+    let departure, arrival: TripArrival?
     let location: Location
     let allowBoarding, allowDropOff: Bool
     let bookingCutOffMins: Int
@@ -56,22 +56,22 @@ struct Route: Codable {
 
 // MARK: - Arrival
 struct TripArrival: Codable {
-    let scheduled: Date
+    let scheduled: Date?
     let actual: Date?
-    let estimated: Date
+    let estimated: Date?
 }
 
 // MARK: - Location
 struct Location: Codable {
     let id: Int
     let type: String
-    let name, regionName, code, codeDetail: String
-    let detailedName: String
-    let lon, lat: Double
-    let googlePlaceId, atcoCode: String
-    let timezone: String
+    let name, regionName, code, codeDetail: String?  // code seemed missing in some responses
+    let detailedName: String?
+    let lon, lat: Double?
+    let googlePlaceId, atcoCode: String?  // Also, seem to miss google place id in some responses
+    let timezone: String?
     let zone: [Zone]
-    let heading, areaId: Int
+    let heading, areaId: Int?
     let direction, localName: String?
 
     enum CodingKeys: String, CodingKey {
@@ -148,7 +148,7 @@ struct Vehicle: Codable {
 
 // MARK: - Gps
 struct Gps: Codable {
-    let lastUpdated: Date
+    let lastUpdated: Date? // Is this a date in a standard format
     let longitude, latitude: Double
     let heading: Int
 

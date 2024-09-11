@@ -54,7 +54,7 @@ class APIManager {
     
     // Fetch Trip
     func fetchTrip(tripId: String, completion: @escaping (Result<Trip, Error>) -> Void) {
-        let urlStr = "\(baseURL)/trips/\(tripId)"
+        let urlStr = "\(baseURL)/trips/\(tripId)/"  // There seems to be a forward slash at the end of the tripId for some unknown reason
         
         guard let url = URL(string: urlStr) else {
             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
@@ -73,7 +73,10 @@ class APIManager {
             }
             
             do {
-                let trip = try JSONDecoder().decode(Trip.self, from: data)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .iso8601  
+                let trip = try decoder.decode(Trip.self, from: data)
                 completion(.success(trip))
             } catch {
                 completion(.failure(error))
