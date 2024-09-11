@@ -8,12 +8,24 @@
 import Foundation
 
 // MARK: - Trip
-struct Trip: Codable, Identifiable {
-    let id: String = UUID().uuidString
+struct Trip: Codable, Identifiable, Hashable {
+    
+    static func == (lhs: Trip, rhs: Trip) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let route: [Route]
     let vehicle: Vehicle
     let description: Description
+    var id: String {
+        return description.routeNumber
+    }
+    
+    func hash(into hasher: inout Hasher) {
+      hasher.combine(id)
+    }
 }
+
 
 // MARK: - Description
 struct Description: Codable {

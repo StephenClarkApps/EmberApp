@@ -8,59 +8,95 @@
 import SwiftUI
 import MapKit
 
-// Temporary placeholder Bus object
-struct Bus: Identifiable {
-    let id: Int
-    let name: String
-    var coordinate: CLLocationCoordinate2D
-    let lastUpdated: Date
-}
-
-
-// MARK: - Bus Map View
 struct BusMapView: View {
-    @State private var mapPosition = MapCameraPosition.region(MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 56.4561, longitude: -2.9747),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    ))
+    @State private var mapPosition: MapCameraPosition
+    @State private var trip: Trip  // Trip object passed in
+    @State private var currentTripUuid: String?
+    @State private var selectedBusLocation: CLLocationCoordinate2D?  // For showing bus callout
     
-    @State private var buses = [
-        Bus(id: 1, name: "Bus 101", coordinate: CLLocationCoordinate2D(latitude: 56.4561, longitude: -2.9747), lastUpdated: Date()),
-        Bus(id: 2, name: "Bus 102", coordinate: CLLocationCoordinate2D(latitude: 56.4565, longitude: -2.9747), lastUpdated: Date())
-    ]
-    
-    // To control when to hide the callout views
-    @State private var selectedBus: Bus? = nil
+    init(trip: Trip, tripUuid: String) {
+        _currentTripUuid = State(initialValue: tripUuid)
+        
+        // Initialize the map centered around the bus's current location or the first stop
+        let busLocation = CLLocationCoordinate2D(
+            latitude: trip.vehicle.gps.latitude,
+            longitude: trip.vehicle.gps.longitude
+        )
+        _mapPosition = State(initialValue: .region(MKCoordinateRegion(
+            center: busLocation,
+            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        )))
+        _trip = State(initialValue: trip)
+    }
     
     var body: some View {
-        Map(position: $mapPosition) {
-            ForEach(buses) { bus in
-                Annotation(bus.name, coordinate: bus.coordinate) {
-                    BusAnnotationView(bus: bus)
+        VStack {
+            // Map with bus and route annotations
+            Map(position: $mapPosition) {
+                // Bus annotation with callout using Annotation
+                let busCoordinate = CLLocationCoordinate2D(latitude: trip.vehicle.gps.latitude, longitude: trip.vehicle.gps.longitude)
+                
+                Annotation(trip.vehicle.name, coordinate: busCoordinate) {
+                    BusAnnotationView(trip: trip)
                         .onTapGesture {
-                            selectedBus = bus
+                            selectedBusLocation = busCoordinate
                         }
+                }
+
+                // Generic route stop annotations without callout
+                ForEach(trip.route, id: \.id) { stop in
+                    Annotation(stop.location.name ?? "", coordinate: CLLocationCoordinate2D(
+                        latitude: stop.location.lat ?? 0.0,
+                        longitude: stop.location.lon ?? 0.0
+                    )) {
+                        Circle()
+                            .fill(Color.blue)
+                            .frame(width: 10, height: 10)
+                    }
+                }
+            }
+            .mapStyle(.standard)
+            .mapControls {
+                MapUserLocationButton()
+                MapCompass()
+            }
+            
+            // Refresh Button
+            Button(action: {
+                fetchUpdatedTripData()
+            }) {
+                Text("Refresh Trip Data")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+        }
+        .onAppear {
+            setupMapForTrip()
+        }
+    }
+    
+    func setupMapForTrip() {
+        let busCoordinate = CLLocationCoordinate2D(latitude: trip.vehicle.gps.latitude, longitude: trip.vehicle.gps.longitude)
+        mapPosition = .region(MKCoordinateRegion(
+            center: busCoordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        ))
+    }
+    
+    func fetchUpdatedTripData() {
+        APIManager.shared.fetchTrip(tripId: self.currentTripUuid ?? "") { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let updatedTrip):
+                    self.trip = updatedTrip
+                    setupMapForTrip()
+                case .failure(let error):
+                    print("Error fetching trip data: \(error.localizedDescription)")
                 }
             }
         }
-        .mapStyle(.standard)
-        .mapControls {
-            MapUserLocationButton()
-            MapCompass()
-        }
-        .onChange(of: mapPosition) { newValue in
-            // Dismiss callout when the map moves
-            selectedBus = nil
-        }
-        .onAppear {
-            // Start live location updates
-            
-        } //: MAP
-    }
-}
-
-struct BusMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        BusMapView()
     }
 }

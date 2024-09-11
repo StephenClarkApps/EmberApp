@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		864D47F52C922ED3000850FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D47F42C922ED3000850FE /* Log.swift */; };
 		86565AF72C91B502008F0225 /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86565AF62C91B502008F0225 /* TripViewModel.swift */; };
 		86565AFB2C91B612008F0225 /* QuoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86565AFA2C91B612008F0225 /* QuoteListView.swift */; };
 		86D2D82E2C90B1E200AAAC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D82D2C90B1E200AAAC01 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		864D47F42C922ED3000850FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		86565AF62C91B502008F0225 /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
 		86565AFA2C91B612008F0225 /* QuoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListView.swift; sourceTree = "<group>"; };
 		86D2D82A2C90B1E200AAAC01 /* Ember Bus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ember Bus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 		86D2D8212C90B1E200AAAC01 = {
 			isa = PBXGroup;
 			children = (
+				864D47F42C922ED3000850FE /* Log.swift */,
 				86D2D82C2C90B1E200AAAC01 /* Ember Bus */,
 				86D2D8432C90B1E900AAAC01 /* Ember BusTests */,
 				86D2D84D2C90B1E900AAAC01 /* Ember BusUITests */,
@@ -330,6 +333,7 @@
 			files = (
 				86D2D8722C911DCA00AAAC01 /* APIManager.swift in Sources */,
 				86D2D8742C911E3700AAAC01 /* QuotesViewModel.swift in Sources */,
+				864D47F52C922ED3000850FE /* Log.swift in Sources */,
 				86D2D8762C91219900AAAC01 /* AppView.swift in Sources */,
 				86D2D86E2C90CB5900AAAC01 /* BusAnnotationView.swift in Sources */,
 				86D2D8642C90B66F00AAAC01 /* Trip.swift in Sources */,
