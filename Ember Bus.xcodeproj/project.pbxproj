@@ -21,6 +21,8 @@
 		86D2D8662C90B86F00AAAC01 /* ExampleTrip.json in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8652C90B86F00AAAC01 /* ExampleTrip.json */; };
 		86D2D8682C90B89900AAAC01 /* ExampleQuotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 86D2D8672C90B89900AAAC01 /* ExampleQuotes.json */; };
 		86D2D86A2C90C3CC00AAAC01 /* EmberBusTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D8692C90C3CC00AAAC01 /* EmberBusTripTests.swift */; };
+		86D2D86C2C90CB1F00AAAC01 /* BusMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D86B2C90CB1F00AAAC01 /* BusMapView.swift */; };
+		86D2D86E2C90CB5900AAAC01 /* BusAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2D86D2C90CB5900AAAC01 /* BusAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		86D2D8652C90B86F00AAAC01 /* ExampleTrip.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleTrip.json; sourceTree = "<group>"; };
 		86D2D8672C90B89900AAAC01 /* ExampleQuotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExampleQuotes.json; sourceTree = "<group>"; };
 		86D2D8692C90C3CC00AAAC01 /* EmberBusTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmberBusTripTests.swift; sourceTree = "<group>"; };
+		86D2D86B2C90CB1F00AAAC01 /* BusMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMapView.swift; sourceTree = "<group>"; };
+		86D2D86D2C90CB5900AAAC01 /* BusAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				86D2D82D2C90B1E200AAAC01 /* AppDelegate.swift */,
+				86D2D82F2C90B1E200AAAC01 /* SceneDelegate.swift */,
 				86D2D85F2C90B29D00AAAC01 /* ViewModel */,
 				86D2D85E2C90B29500AAAC01 /* View */,
 				86D2D8602C90B2C600AAAC01 /* Data */,
 				86D2D85D2C90B28F00AAAC01 /* API */,
-				86D2D82F2C90B1E200AAAC01 /* SceneDelegate.swift */,
-				86D2D8312C90B1E200AAAC01 /* ViewController.swift */,
 				86D2D8332C90B1E200AAAC01 /* Main.storyboard */,
 				86D2D8362C90B1E800AAAC01 /* Assets.xcassets */,
 				86D2D8382C90B1E800AAAC01 /* LaunchScreen.storyboard */,
@@ -154,6 +157,8 @@
 		86D2D85E2C90B29500AAAC01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				86D2D86B2C90CB1F00AAAC01 /* BusMapView.swift */,
+				86D2D86D2C90CB5900AAAC01 /* BusAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		86D2D85F2C90B29D00AAAC01 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				86D2D8312C90B1E200AAAC01 /* ViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -307,8 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D2D86E2C90CB5900AAAC01 /* BusAnnotationView.swift in Sources */,
 				86D2D8642C90B66F00AAAC01 /* Trip.swift in Sources */,
 				86D2D8622C90B4C000AAAC01 /* Quotes.swift in Sources */,
+				86D2D86C2C90CB1F00AAAC01 /* BusMapView.swift in Sources */,
 				86D2D8322C90B1E200AAAC01 /* ViewController.swift in Sources */,
 				86D2D82E2C90B1E200AAAC01 /* AppDelegate.swift in Sources */,
 				86D2D8302C90B1E200AAAC01 /* SceneDelegate.swift in Sources */,
