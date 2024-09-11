@@ -35,12 +35,23 @@ struct Quotes: Codable {
 }
 
 // MARK: - Quote
-struct Quote: Codable {
+struct Quote: Codable, Identifiable {
+    var id: String  
     let availability: Availability
     let prices: Prices
     let legs: [Leg]
     let bookable: Bool
+
+    init(from decoder: Decoder) throws {
+        self.id = UUID().uuidString  // Generate a unique ID (allows this to conform to Identifiable)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.availability = try container.decode(Availability.self, forKey: .availability)
+        self.prices = try container.decode(Prices.self, forKey: .prices)
+        self.legs = try container.decode([Leg].self, forKey: .legs)
+        self.bookable = try container.decode(Bool.self, forKey: .bookable)
+    }
 }
+
 
 // MARK: - Availability
 struct Availability: Codable {
@@ -67,10 +78,11 @@ struct Leg: Codable {
 
 // MARK: - Arrival
 struct Arrival: Codable {
-    let scheduled, actual, estimated: Date
+    let scheduled: Date?
+    let estimated: Date?
+    let actual: Date?
 }
 
-// MARK: - Description
 // MARK: - BusDescription
 struct BusDescription: Codable {
     let brand: String

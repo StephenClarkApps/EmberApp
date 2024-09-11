@@ -8,7 +8,8 @@
 import Foundation
 
 // MARK: - Trip
-struct Trip: Codable {
+struct Trip: Codable, Identifiable {
+    let id: String = UUID().uuidString
     let route: [Route]
     let vehicle: Vehicle
     let description: Description

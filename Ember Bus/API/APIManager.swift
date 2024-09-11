@@ -5,23 +5,26 @@
 //  Created by Stephen Clark on 10/09/2024.
 //
 
-
 import Foundation
 
 class APIManager {
     static let shared = APIManager()
-    
     private let baseURL = "https://api.ember.to/v1"
     
-    // Method for fetching quotes, previously added.
-    func fetchQuotes(origin: Int, destination: Int, departureFrom: Date, departureTo: Date, completion: @escaping (Result<[Quote], Error>) -> Void) {
-        let dateFormatter = ISO8601DateFormatter()
-        let departureFromStr = dateFormatter.string(from: departureFrom)
-        let departureToStr = dateFormatter.string(from: departureTo)
+    // Fetch Quotes with a completion handler
+    func fetchQuotes(origin: Int, destination: Int, departureFrom: Date, departureTo: Date, completion: @escaping (Result<Quotes, Error>) -> Void) {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         
-        let urlStr = "\(baseURL)/quotes/?origin=\(origin)&destination=\(destination)&departure_date_from=\(departureFromStr)&departure_date_to=\(departureToStr)"
+        let departureFromString = isoFormatter.string(from: departureFrom)
+        let departureToString = isoFormatter.string(from: departureTo)
         
-        guard let url = URL(string: urlStr) else { return }
+        let urlStr = "\(baseURL)/quotes/?origin=\(origin)&destination=\(destination)&departure_date_from=\(departureFromString)&departure_date_to=\(departureToString)"
+        
+        guard let url = URL(string: urlStr) else {
+            completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -29,10 +32,18 @@ class APIManager {
                 return
             }
             
-            guard let data = data else { return }
+            guard let data = data else {
+                completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                return
+            }
+            
             do {
-                let quotes = try JSONDecoder().decode([Quote].self, from: data)
-                completion(.success(quotes))
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let quotesResponse = try decoder.decode(Quotes.self, from: data)
+                completion(.success(quotesResponse))
             } catch {
                 completion(.failure(error))
             }
@@ -41,11 +52,14 @@ class APIManager {
         task.resume()
     }
     
-    // Method for fetching a specific trip
+    // Fetch Trip
     func fetchTrip(tripId: String, completion: @escaping (Result<Trip, Error>) -> Void) {
-        let urlStr = "\(baseURL)/trips/\(tripId)/"
+        let urlStr = "\(baseURL)/trips/\(tripId)"
         
-        guard let url = URL(string: urlStr) else { return }
+        guard let url = URL(string: urlStr) else {
+            completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -53,7 +67,11 @@ class APIManager {
                 return
             }
             
-            guard let data = data else { return }
+            guard let data = data else {
+                completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                return
+            }
+            
             do {
                 let trip = try JSONDecoder().decode(Trip.self, from: data)
                 completion(.success(trip))

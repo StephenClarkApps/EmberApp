@@ -12,38 +12,18 @@ class QuotesViewModel: ObservableObject {
     @Published var quotes: [Quote]?
     @Published var errorMessage: String?
     
+    private var cancellables = Set<AnyCancellable>()
+    
     func fetchQuotes(origin: Int, destination: Int, departureFrom: Date, departureTo: Date) {
-        let urlString = "https://api.ember.to/v1/quotes/?origin=\(origin)&destination=\(destination)&departure_date_from=\(departureFrom)&departure_date_to=\(departureTo)"
-        guard let url = URL(string: urlString) else {
-            self.errorMessage = "Invalid URL"
-            return
+        APIManager.shared.fetchQuotes(origin: origin, destination: destination, departureFrom: departureFrom, departureTo: departureTo) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let quotesResponse):
+                    self.quotes = quotesResponse.quotes
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                }
+            }
         }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                DispatchQueue.main.async {
-                    self.errorMessage = error.localizedDescription
-                }
-                return
-            }
-            
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    self.errorMessage = "No data returned"
-                }
-                return
-            }
-            
-            do {
-                let decodedQuotes = try JSONDecoder().decode([Quote].self, from: data)
-                DispatchQueue.main.async {
-                    self.quotes = decodedQuotes
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    self.errorMessage = error.localizedDescription
-                }
-            }
-        }.resume()
     }
 }
