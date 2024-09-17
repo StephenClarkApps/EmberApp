@@ -16,18 +16,18 @@ struct BusMapView: View {
     @State private var isCalloutVisible = false  // Track visibility for the bus callout
     @State private var userHasMovedMap = false  // Track user map movement
     @State private var previousBusCoordinate: CLLocationCoordinate2D?  // Track previous location of bus for comparison
+    @State private var autoDismissCallout = true  // State to toggle automatic callout dismissal
+    @State private var mapZoom: Double = 0.05  // New state for the zoom level
 
     init(trip: Trip, tripUuid: String) {
         _currentTripUuid = State(initialValue: tripUuid)
 
-        // Initialize the bus coordinate based on the trip vehicle's GPS
         let initialBusCoordinate = CLLocationCoordinate2D(
             latitude: trip.vehicle.gps.latitude,
             longitude: trip.vehicle.gps.longitude
         )
         _busCoordinate = State(initialValue: initialBusCoordinate)
 
-        // Initialize the map centered around the bus's current location
         _mapPosition = State(initialValue: .region(MKCoordinateRegion(
             center: initialBusCoordinate,
             span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
@@ -39,13 +39,30 @@ struct BusMapView: View {
 
     var body: some View {
         VStack {
+            // Toggle to enable/disable automatic callout dismissal
+            Toggle("Auto Dismiss Callout", isOn: $autoDismissCallout)
+                .padding()
+
+            // Slider for controlling the map's zoom level
+            VStack {
+                // Convert zoom level to meters or kilometers for display
+                let zoomDistance = zoomLevelToDistance(mapZoom)
+                Text("Zoom Level: \(zoomDistance)")
+                
+                Slider(value: $mapZoom, in: 0.01...0.7, step: 0.03)  // Slider for zoom, with a range between 0.01 and 0.2
+                    .padding()
+                    .onChange(of: mapZoom) { newValue in
+                        Log.shared.info("Zoom level adjusted to: \(newValue)")
+                        updateMapZoom()
+                    }
+            }
+
             // Map with bus annotation
             Map(position: $mapPosition) {
                 // Bus annotation with dynamic coordinate updates
                 Annotation(trip.vehicle.name, coordinate: busCoordinate) {
                     BusAnnotationView(trip: trip, isCalloutVisible: $isCalloutVisible)
                         .onTapGesture {
-                            // Show the callout when the bus is tapped
                             Log.shared.info("Bus tapped. Showing callout.")
                             isCalloutVisible = true
                         }
@@ -73,13 +90,15 @@ struct BusMapView: View {
             }
             .onMapCameraChange(frequency: .onEnd) { context in
                 Log.shared.info("onMapCameraChange triggered")
-                // Detect user map movement and dismiss the callout
+                
                 if userHasMovedMap {
-                    Log.shared.info("User moved the map. Dismissing callout.")
-                    isCalloutVisible = false  // Dismiss the callout
+                    if autoDismissCallout {
+                        Log.shared.info("User moved the map. Dismissing callout.")
+                        isCalloutVisible = false
+                    }
                 } else {
                     Log.shared.info("User initiated map move. Tracking.")
-                    userHasMovedMap = true  // Mark that the user moved the map
+                    userHasMovedMap = true
                 }
             }
 
@@ -102,21 +121,26 @@ struct BusMapView: View {
         }
     }
 
-    func setupMapForTrip() {
-        // Log the centering event
-        Log.shared.info("Centering map on bus location: \(busCoordinate.latitude), \(busCoordinate.longitude)")
-        
-        // Animate the map centering for smoother movement
+    // Adjust the map's zoom level based on the slider value
+    func updateMapZoom() {
         withAnimation(.easeInOut(duration: 1.0)) {
             mapPosition = .region(MKCoordinateRegion(
                 center: busCoordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)  // Smaller delta for a more zoomed-in view
+                span: MKCoordinateSpan(latitudeDelta: mapZoom, longitudeDelta: mapZoom)
             ))
         }
     }
 
+    func setupMapForTrip() {
+        Log.shared.info("Centering map on bus location: \(busCoordinate.latitude), \(busCoordinate.longitude)")
+        withAnimation(.easeInOut(duration: 1.0)) {
+            mapPosition = .region(MKCoordinateRegion(
+                center: busCoordinate,
+                span: MKCoordinateSpan(latitudeDelta: mapZoom, longitudeDelta: mapZoom)
+            ))
+        }
+    }
 
-    // Fetch updated trip data and update the bus's location
     func fetchUpdatedTripData() {
         Log.shared.info("Fetching trip data for trip UUID: \(self.currentTripUuid ?? "unknown")")
         APIManager.shared.fetchTrip(tripId: self.currentTripUuid ?? "") { result in
@@ -131,23 +155,34 @@ struct BusMapView: View {
                         longitude: updatedTrip.vehicle.gps.longitude
                     )
 
-                    // Check if callout is visible and move the annotation if necessary
                     if isCalloutVisible && previousBusCoordinate != newBusCoordinate {
                         Log.shared.info("Callout is visible, moving annotation to new location.")
-                        self.busCoordinate = newBusCoordinate  // Move the bus annotation
-                        setupMapForTrip()  // Re-center the map on the bus's new location
+                        self.busCoordinate = newBusCoordinate
+                        setupMapForTrip()
                     } else if !userHasMovedMap {
                         Log.shared.info("User hasn't moved the map. Re-centering.")
                         self.busCoordinate = newBusCoordinate
                         setupMapForTrip()
                     }
 
-                    previousBusCoordinate = newBusCoordinate  // Track the bus's previous position
+                    previousBusCoordinate = newBusCoordinate
                     
                 case .failure(let error):
                     Log.shared.error("Error fetching trip data: \(error.localizedDescription)")
                 }
             }
+        }
+    }
+
+    // Convert the zoom level (latitudeDelta) to distance in meters or kilometers
+    func zoomLevelToDistance(_ zoomLevel: Double) -> String {
+        // 1 degree of latitude is approximately 111 kilometers (111,000 meters)
+        let meters = zoomLevel * 111_000
+        
+        if meters >= 1000 {
+            return String(format: "%.2f km", meters / 1000)
+        } else {
+            return String(format: "%.0f meters", meters)
         }
     }
 }

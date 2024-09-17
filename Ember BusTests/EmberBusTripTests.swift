@@ -59,8 +59,8 @@ final class EmberBusTripTests: XCTestCase {
         }
 
         // Then: Verify scheduled and estimated times for the first stop
-        XCTAssertEqual(firstRoute.departure.scheduled, ISO8601DateFormatter().date(from: "2024-09-10T11:40:00+00:00"), "Expected scheduled departure time")
-        XCTAssertEqual(firstRoute.arrival.estimated, ISO8601DateFormatter().date(from: "2024-09-10T11:40:00+00:00"), "Expected estimated arrival time")
+        XCTAssertEqual(firstRoute.departure?.scheduled ?? Date(), ISO8601DateFormatter().date(from: "2024-09-10T11:40:00+00:00"), "Expected scheduled departure time")
+        XCTAssertEqual(firstRoute.arrival?.estimated ?? Date(), ISO8601DateFormatter().date(from: "2024-09-10T11:40:00+00:00"), "Expected estimated arrival time")
     }
 
     // MARK: - User Story 3: Highlight the Next Stop and ETA
@@ -76,7 +76,7 @@ final class EmberBusTripTests: XCTestCase {
 
         // Then: Verify the next stop and its estimated arrival time
         XCTAssertEqual(nextStop.location.name, "Dundee West", "Expected next stop to be Dundee West")
-        XCTAssertEqual(nextStop.arrival.estimated, ISO8601DateFormatter().date(from: "2024-09-10T11:54:27+00:00"), "Expected estimated arrival time for next stop")
+        XCTAssertEqual(nextStop.arrival?.estimated ?? Date(), ISO8601DateFormatter().date(from: "2024-09-10T11:54:27+00:00"), "Expected estimated arrival time for next stop")
     }
 
     // MARK: - User Story 4: Show Seat, Wheelchair, and Bicycle Availability

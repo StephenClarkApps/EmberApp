@@ -102,19 +102,6 @@ struct Location: Codable {
     }
 }
 
-//enum Timezone: String, Codable {
-//    case europeLondon = "Europe/London"
-//}
-//
-//enum TypeEnum: String, Codable {
-//    case stopPoint = "STOP_POINT"
-//}
-
-// MARK: - Zone
-//struct Zone: Codable {
-//    let latitude, longitude: Double
-//}
-
 // MARK: - StopReplacement
 struct TripStopReplacement: Codable {
     let description: String

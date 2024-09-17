@@ -23,12 +23,11 @@ struct QuotesListView: View {
                             }
                         }) {
                             VStack(alignment: .leading) {
-                                Text("Origin: \(quote.legs.first?.origin.name ?? "Origin")")
-                                Text("Destination: \(quote.legs.first?.destination.name ?? "Destination")")
-                                Text("Operator: \(quote.legs.first?.description.descriptionOperator ?? "Description")")
+                                Text("\(quote.legs.first?.origin.name ?? "Origin") -> \(quote.legs.first?.destination.name ?? "Destination")").bold()
                                 Text("Number Plate: \(quote.legs.first?.description.numberPlate ?? "No Plate")")
                                 Text("Departure: \(quote.legs.first?.departure.scheduled?.description ?? Date().description)")
-                                Text("Unique Trip Id: \(quote.legs.first?.tripUid ?? "")")
+                                Text("Arrival: \(quote.legs.first?.arrival.scheduled?.description ?? Date().description)")
+//                                Text("Unique Trip Id: \(quote.legs.first?.tripUid ?? "")")
                             }
                         }
                     }
@@ -38,7 +37,7 @@ struct QuotesListView: View {
                     Text("Fetching quotes...")
                 }
             }
-            .navigationTitle("Quotes List")
+            .navigationTitle("Trips")
             .onAppear {
                 quotesViewModel.fetchQuotes(for: 13, destination: 42)
             }

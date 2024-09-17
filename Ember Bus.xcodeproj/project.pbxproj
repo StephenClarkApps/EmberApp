@@ -107,8 +107,8 @@
 		86D2D8212C90B1E200AAAC01 = {
 			isa = PBXGroup;
 			children = (
-				864D47F62C9237BA000850FE /* LocationManager.swift */,
 				864D47F42C922ED3000850FE /* Log.swift */,
+				864D47F62C9237BA000850FE /* LocationManager.swift */,
 				86D2D82C2C90B1E200AAAC01 /* Ember Bus */,
 				86D2D8432C90B1E900AAAC01 /* Ember BusTests */,
 				86D2D84D2C90B1E900AAAC01 /* Ember BusUITests */,

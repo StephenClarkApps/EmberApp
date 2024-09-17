@@ -18,22 +18,36 @@ class QuotesViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     func fetchQuotes(for origin: Int, destination: Int) {
-        let departureFrom = getStartOfDayTime(for: 7)
-        let departureTo = getTwoHoursAfterNowOrEndOfDay()
+        let now = Date()
+        let startOfToday = Calendar.current.startOfDay(for: now)
+        let endOfToday = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: now)!
 
         isLoading = true
-        APIManager.shared.fetchQuotes(origin: origin, destination: destination, departureFrom: departureFrom, departureTo: departureTo) { result in
+        APIManager.shared.fetchQuotes(origin: origin, destination: destination, departureFrom: startOfToday, departureTo: endOfToday) { result in
             DispatchQueue.main.async {
                 self.isLoading = false
                 switch result {
                 case .success(let quotesResponse):
-                    self.quotes = quotesResponse.quotes
+                    // Filter quotes where the trip has started today but will end in the future
+                    self.quotes = quotesResponse.quotes.filter { quote in
+                        guard let firstLeg = quote.legs.first else {
+                            return false
+                        }
+                        guard let tripStart = firstLeg.departure.scheduled, let tripEnd = firstLeg.arrival.scheduled else {
+                            return false
+                        }
+                        
+                        // The trip should have started today or before but end in the future
+                        return Calendar.current.isDate(tripStart, inSameDayAs: now) && tripEnd >= now
+                    }
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
                 }
             }
         }
     }
+
+
     
     func fetchTrip(for tripUid: String) {
         self.currentlySelectedUuid = tripUid
