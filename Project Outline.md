@@ -74,6 +74,20 @@ As a passenger,
 I want to be able to tap on the bus or a stop to view additional information (e.g., bus number, amenities, scheduled time)  
 **so that** I can get more details about the bus or stop if I need them.
 
+## Process
+
+I started by using postman to query the endpoints provided and altered any elements like time codes until I got a valid response.
+
+I ran the JSON through Quicktype, and began to manually edit it.
+
+I pulled the JSON response
+
+Based on any errors and using a red/green refactor approach I adjusted the Data classes so the decoding was successful and the 
+expectations of what the params would be equal to were met.
+
+I moved onto the user interface and started making a map and then a settings view, and a trip list, and finally a view to show
+stops and bus info. 
+
 
 ## The Result
 
@@ -91,7 +105,7 @@ This is also true of connectivity issues with the devices connection to broad ba
 
 The user can tap to locate themselves on the map with location permissions requested (and disable the auto location to the bus's position).
 
-
+![Bus Map](screen-grab.jpg)
 
 
 ## Limitations and Future Improvements
@@ -114,3 +128,4 @@ quite straight forward to implement the selection of a start and endpoint when g
 We didn't map all the bus stop points as annotations in this implementation, as I ran out of time to add these back in with my updated code to add the 
 bus's location currently.
 
+Accesibility - The app needs accesibility labels added to make it more ready for screen reader. 

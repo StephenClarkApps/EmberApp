@@ -20,6 +20,7 @@
 		8649C0EF2CA2C5F800A34754 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8649C0EE2CA2C5F800A34754 /* README.md */; };
 		8649C0F12CA2C6E600A34754 /* Project Outline.md in Resources */ = {isa = PBXBuildFile; fileRef = 8649C0F02CA2C6E600A34754 /* Project Outline.md */; };
 		8649C0F52CA2FB3E00A34754 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649C0F42CA2FB3E00A34754 /* DateExtensionTests.swift */; };
+		8649C0F72CA3090100A34754 /* screen-grab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8649C0F62CA3090000A34754 /* screen-grab.jpg */; };
 		864D47F52C922ED3000850FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D47F42C922ED3000850FE /* Log.swift */; };
 		864D47F72C9237BA000850FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D47F62C9237BA000850FE /* LocationManager.swift */; };
 		86565AF72C91B502008F0225 /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86565AF62C91B502008F0225 /* TripViewModel.swift */; };
@@ -76,6 +77,7 @@
 		8649C0EE2CA2C5F800A34754 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8649C0F02CA2C6E600A34754 /* Project Outline.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Project Outline.md"; sourceTree = "<group>"; };
 		8649C0F42CA2FB3E00A34754 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		8649C0F62CA3090000A34754 /* screen-grab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen-grab.jpg"; sourceTree = "<group>"; };
 		864D47F42C922ED3000850FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		864D47F62C9237BA000850FE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		86565AF62C91B502008F0225 /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				8649C0EE2CA2C5F800A34754 /* README.md */,
+				8649C0F62CA3090000A34754 /* screen-grab.jpg */,
 				8649C0F02CA2C6E600A34754 /* Project Outline.md */,
 				86D2D82C2C90B1E200AAAC01 /* Ember Bus */,
 				86D2D8432C90B1E900AAAC01 /* Ember BusTests */,
@@ -368,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8649C0F72CA3090100A34754 /* screen-grab.jpg in Resources */,
 				8649C0F12CA2C6E600A34754 /* Project Outline.md in Resources */,
 				8649C0EF2CA2C5F800A34754 /* README.md in Resources */,
 				86D2D83A2C90B1E800AAAC01 /* LaunchScreen.storyboard in Resources */,
