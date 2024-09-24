@@ -10,6 +10,7 @@ import Combine
 import CoreLocation
 
 class TripViewModel: ObservableObject {
+    // MARK: - PROPERTIES
     @Published var trip: Trip?
     @Published var errorMessage: String?
     
@@ -29,7 +30,6 @@ class TripViewModel: ObservableObject {
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished:
-                    // Do nothing
                     break
                 case .failure(let error):
                     self?.errorMessage = error.localizedDescription
@@ -50,6 +50,17 @@ class TripViewModel: ObservableObject {
         }
         return CLLocationCoordinate2D(latitude: gps.latitude, longitude: gps.longitude)
     }
+
+    // 2. Get Route Stops for Map Annotations
+    func getRouteStops() -> [IdentifiableCoordinate] {
+        return trip?.route.compactMap { stop in
+            if let lat = stop.location.lat, let lon = stop.location.lon {
+                return IdentifiableCoordinate(id: stop.location.name ?? "-", coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
+            }
+            return nil
+        } ?? []
+    }
+
     
     // 2. Stop Times
     func getStopTimes() -> [(location: String, scheduled: Date?, estimated: Date?)] {
@@ -60,7 +71,7 @@ class TripViewModel: ObservableObject {
         } ?? []
     }
 
-    // Added getNextStop() method
+    /// getNextStop() method to return the next upcoming stop
     func getNextStop() -> (location: String, estimatedArrival: Date?, scheduledArrival: Date?)? {
         let currentDate = Date()
         
@@ -139,8 +150,6 @@ class TripViewModel: ObservableObject {
     func getBusDetails() -> Vehicle? {
         return trip?.vehicle
     }
-
-    // Additional Methods Moved from View:
 
     // Time Status
     enum TimeStatus {

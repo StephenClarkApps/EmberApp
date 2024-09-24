@@ -8,31 +8,34 @@
 import Foundation
 
 // MARK: - APIError
-enum APIError: Error, LocalizedError {
+enum APIError: LocalizedError {
     case invalidURL
-    case invalidResponse
     case networkError(Error)
+    case invalidResponse
     case decodingError(Error)
-    case clientError(Int)
-    case serverError(Int)
+    case clientError(statusCode: Int)
+    case serverError(statusCode: Int)
     case unexpectedStatusCode(Int)
+    case unknown
     
     var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return NSLocalizedString("Invalid URL.", comment: "")
-        case .invalidResponse:
-            return NSLocalizedString("Invalid response from the server.", comment: "")
+            return "The URL provided was invalid."
         case .networkError(let error):
-            return NSLocalizedString("Network error: \(error.localizedDescription)", comment: "")
+            return error.localizedDescription
+        case .invalidResponse:
+            return "Received an invalid response from the server."
         case .decodingError(let error):
-            return NSLocalizedString("Decoding error: \(error.localizedDescription)", comment: "")
+            return "Failed to decode the response: \(error.localizedDescription)"
         case .clientError(let statusCode):
-            return NSLocalizedString("Client error with status code \(statusCode).", comment: "")
+            return "Client error with status code: \(statusCode)."
         case .serverError(let statusCode):
-            return NSLocalizedString("Server error with status code \(statusCode).", comment: "")
+            return "Server error with status code: \(statusCode)."
         case .unexpectedStatusCode(let statusCode):
-            return NSLocalizedString("Unexpected status code \(statusCode).", comment: "")
+            return "Unexpected status code: \(statusCode)."
+        case .unknown:
+            return "An unknown error occurred."
         }
     }
 }

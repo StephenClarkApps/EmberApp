@@ -18,30 +18,30 @@ struct BusMapView: View {
     @State private var isProgrammaticRegionChange = false  // New flag
     @State private var mapZoom: Double = 0.05
     @State private var showStopList: Bool = false
-
+    
     // Use @AppStorage to observe changes in UserDefaults
     @AppStorage("autoDismissCallout") private var autoDismissCallout: Bool = UserDefaults.standard.autoDismissCallout
     @AppStorage("autoPollEnabled") private var autoPollEnabled: Bool = UserDefaults.standard.autoPollEnabled
     @AppStorage("defaultZoomLevel") private var defaultZoomLevel: Double = UserDefaults.standard.defaultZoomLevel
-
+    
     @State private var timer: AnyCancellable?
-
+    
     init(tripId: String) {
         _viewModel = StateObject(wrappedValue: TripViewModel(tripId: tripId))
         _mapRegion = State(initialValue: MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
             span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         ))
-        _busCoordinate = State(initialValue: IdentifiableCoordinate(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0)))
+        _busCoordinate = State(initialValue: IdentifiableCoordinate(id: "bus", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0)))
     }
-
+    
     var body: some View {
         VStack {
             // Slider for controlling the map's zoom level
             VStack {
                 let zoomDistance = zoomLevelToDistance(mapZoom)
                 Text("Zoom Level: \(zoomDistance)")
-
+                
                 Slider(value: $mapZoom, in: 0.01...0.7, step: 0.03)
                     .padding()
                     .onChange(of: mapZoom) { newValue in
@@ -57,16 +57,21 @@ struct BusMapView: View {
                 mapZoom = newValue
                 updateMapZoom()
             }
-
+            
             // Map with bus annotation
-            Map(coordinateRegion: $mapRegion, annotationItems: [busCoordinate]) { coordinate in
-                MapAnnotation(coordinate: coordinate.coordinate) {
-                    BusAnnotationView(isCalloutVisible: $isCalloutVisible)
-                        .environmentObject(viewModel)
-                        .onTapGesture {
-                            Log.shared.info("Bus tapped. Showing callout.")
-                            isCalloutVisible = true
-                        }
+            Map(coordinateRegion: $mapRegion, showsUserLocation: true, annotationItems: [busCoordinate] + viewModel.getRouteStops()) { item in
+                MapAnnotation(coordinate: item.coordinate) {
+                    if item.id == "bus" {
+                        BusAnnotationView(isCalloutVisible: $isCalloutVisible)
+                            .environmentObject(viewModel)
+                    } else {
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 10, height: 10)
+                            .overlay(
+                                Circle().stroke(Color.green, lineWidth: 2)
+                            )
+                    }
                 }
             }
             .mapStyle(.standard)
@@ -75,16 +80,16 @@ struct BusMapView: View {
                 MapCompass()
             }
             .sheet(isPresented: $showStopList) {
-                                   // Present StopListView as a sheet
-                                   if let trip = viewModel.trip {
-                                       StopListView(trip: trip)
-                                   } else {
-                                       Text("Trip data is unavailable.")
-                                   }
-                               }
+                // Present StopListView as a sheet
+                if let trip = viewModel.trip {
+                    StopListView(trip: trip)
+                } else {
+                    Text("Trip data is unavailable.")
+                }
+            }
             .onMapCameraChange(frequency: .onEnd) { context in
                 Log.shared.info("onMapCameraChange triggered")
-
+                
                 if isProgrammaticRegionChange {
                     Log.shared.info("Map camera change was programmatic.")
                     isProgrammaticRegionChange = false
@@ -99,24 +104,24 @@ struct BusMapView: View {
             }
             
             // Info Button to navigate to StopListView
-               Button(action: {
-                   showStopList = true
-               }) {
-                   HStack {
-                       Image(systemName: "info.circle")
-                       Text("View Stops")
-                   }
-                   .frame(maxWidth: .infinity)
-                   .padding()
-                   .background(Color.blue)
-                   .foregroundColor(.white)
-                   .cornerRadius(8)
-               }
-               .padding(.top, 2)
-               .padding(.leading, 15)
-               .padding(.trailing, 15)
-               .padding(.bottom, 8)
-
+            Button(action: {
+                showStopList = true
+            }) {
+                HStack {
+                    Image(systemName: "info.circle")
+                    Text("View Stops")
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+            }
+            .padding(.top, 2)
+            .padding(.leading, 15)
+            .padding(.trailing, 15)
+            .padding(.bottom, 8)
+            
             if(!autoPollEnabled) {
                 // Refresh Button
                 Button(action: {
@@ -138,10 +143,10 @@ struct BusMapView: View {
         }
         .onAppear {
             Log.shared.info("BusMapView appeared.")
-
+            
             // Fetch trip data once when the view appears
             viewModel.fetchTripData()
-
+            
             if autoPollEnabled {
                 startAutoPolling()
             }
@@ -165,18 +170,18 @@ struct BusMapView: View {
             }
         }
     }
-
+    
     // Adjust the map's zoom level based on the slider value
     func updateMapZoom() {
         withAnimation(.easeInOut(duration: 1.0)) {
             mapRegion.span = MKCoordinateSpan(latitudeDelta: mapZoom, longitudeDelta: mapZoom)
         }
     }
-
+    
     func setupMapForTrip() {
         if let busLocation = viewModel.getCurrentLocation() {
             Log.shared.info("Centering map on bus location: \(busLocation.latitude), \(busLocation.longitude)")
-            busCoordinate = IdentifiableCoordinate(coordinate: busLocation)
+            busCoordinate = IdentifiableCoordinate(id: "bus", coordinate: busLocation)
             isProgrammaticRegionChange = true  // Set the flag
             withAnimation(.easeInOut(duration: 1.0)) {
                 mapRegion.center = busLocation
@@ -186,14 +191,14 @@ struct BusMapView: View {
             Log.shared.error("Bus location is not available.")
         }
     }
-
+    
     func updateBusCoordinate(_ newCoordinate: CLLocationCoordinate2D) {
-        busCoordinate = IdentifiableCoordinate(coordinate: newCoordinate)
+        busCoordinate = IdentifiableCoordinate(id: "bus", coordinate: newCoordinate)
         if isCalloutVisible || !userHasMovedMap {
             setupMapForTrip()
         }
     }
-
+    
     func startAutoPolling() {
         stopAutoPolling()  // Ensure any existing timer is canceled
         timer = Timer.publish(every: 10.0, on: .main, in: .common)
@@ -202,16 +207,16 @@ struct BusMapView: View {
                 viewModel.fetchTripData()
             }
     }
-
+    
     func stopAutoPolling() {
         timer?.cancel()
         timer = nil
     }
-
+    
     // Convert the zoom level (latitudeDelta) to distance in meters or kilometers
     func zoomLevelToDistance(_ zoomLevel: Double) -> String {
         let meters = zoomLevel * 111_000
-
+        
         if meters >= 1000 {
             return String(format: "%.2f km", meters / 1000)
         } else {
@@ -222,6 +227,6 @@ struct BusMapView: View {
 
 // MARK: - IdentifiableCoordinate
 struct IdentifiableCoordinate: Identifiable, Equatable {
-    let id = UUID()
+    let id: String
     let coordinate: CLLocationCoordinate2D
 }

@@ -27,18 +27,4 @@ extension Date {
         return Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: now) ?? now
     }
 
-    // Two hours after the current time or end of day, whichever comes first
-    func twoHoursAfterNowOrEndOfDay() -> Date {
-        let calendar = Calendar.current
-        let now = self
-        var twoHoursLater = calendar.date(byAdding: .hour, value: 2, to: now) ?? now
-
-        if !calendar.isDate(twoHoursLater, inSameDayAs: now) {
-            var endOfDayComponents = calendar.dateComponents([.year, .month, .day], from: now)
-            endOfDayComponents.hour = 23
-            endOfDayComponents.minute = 59
-            twoHoursLater = calendar.date(from: endOfDayComponents) ?? now
-        }
-        return twoHoursLater
-    }
 }

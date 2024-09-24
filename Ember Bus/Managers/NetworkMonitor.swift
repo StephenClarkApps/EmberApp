@@ -8,6 +8,7 @@
 import Network
 import Combine
 
+// MARK: - NetworkMonitoring Protocol
 protocol NetworkMonitoring: ObservableObject {
     var isConnected: Bool { get }
     var isConnectedPublisher: Published<Bool>.Publisher { get } // Add a publisher
@@ -15,7 +16,7 @@ protocol NetworkMonitoring: ObservableObject {
     func stopMonitoring()
 }
 
-
+// MARK: - NetworkMonitor Class
 class NetworkMonitor: ObservableObject, NetworkMonitoring {
     @Published var isConnected: Bool = true
 

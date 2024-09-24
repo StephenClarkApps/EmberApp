@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 class QuotesViewModel: ObservableObject {
-    // Published properties
+    // MARK: - Published properties
     @Published var quotes: [Quote]?
     @Published var errorMessage: String?
     @Published var selectedTrip: Trip?
@@ -21,6 +21,7 @@ class QuotesViewModel: ObservableObject {
     private let networkMonitor: any NetworkMonitoring
     private let quoteService: QuoteServiceProtocol
 
+    // MARK: - INIT
     init(networkMonitor: any NetworkMonitoring = NetworkMonitor(), quoteService: QuoteServiceProtocol = QuoteService()) {
         self.networkMonitor = networkMonitor
         self.quoteService = quoteService
@@ -37,7 +38,7 @@ class QuotesViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    // Fetch quotes for the given origin and destination
+    /// Fetch quotes for the given origin and destination
     func fetchQuotes(for origin: Int, destination: Int) {
         guard isConnected else {
             self.errorMessage = "No internet connection. Please check your network settings."
@@ -68,7 +69,7 @@ class QuotesViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    // Fetch trip details for the selected trip UID
+    /// Fetch trip details for the selected trip UID
     func fetchTrip(for tripUid: String) {
         guard isConnected else {
             self.errorMessage = "No internet connection. Please check your network settings."
@@ -94,7 +95,7 @@ class QuotesViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    // Validates if the quote is for today and hasn't already departed
+    /// Validates if the quote is for today and hasn't already departed
     private func isValidQuote(_ quote: Quote, currentDate: Date = Date()) -> Bool {
         guard let firstLeg = quote.legs.first,
               let tripStart = firstLeg.departure.scheduled,

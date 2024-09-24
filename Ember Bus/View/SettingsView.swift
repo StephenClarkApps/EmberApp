@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     // MARK: - PROPERTIES
 
-    @EnvironmentObject var settings: Settings
+    @EnvironmentObject var settings: Settings  // Use a setting env object allowing this to be observed for live updates
     @State private var enableMoreInfo: Bool = true
 
     var body: some View {

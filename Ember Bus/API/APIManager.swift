@@ -8,18 +8,21 @@
 import Foundation
 import Combine
 
+// MARK: - APIManager
 class APIManager: APIServiceProtocol {
     static let shared = APIManager()
-    private let baseURL = EBConstants.baseURL
+    private let baseURL: String
     private let session: URLSession
-    
+
     // MARK: - Initializer
-    init(session: URLSession = .shared) {
+    init(session: URLSession = .shared, baseURL: String = EBConstants.baseURL) {
         self.session = session
+        self.baseURL = baseURL
     }
-    
+
     // MARK: - Fetch Quotes
     func fetchQuotes(origin: Int, destination: Int, departureFrom: Date, departureTo: Date) -> AnyPublisher<QuotesResponse, APIError> {
+        // Configure Date Formatter
         let isoFormatter = ISO8601DateFormatter()
         isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         isoFormatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -27,7 +30,11 @@ class APIManager: APIServiceProtocol {
         let departureFromString = isoFormatter.string(from: departureFrom)
         let departureToString = isoFormatter.string(from: departureTo)
         
-        var components = URLComponents(string: "\(baseURL)\(EBConstants.Endpoints.quotes)")!
+        // Construct URL Components Safely
+        guard var components = URLComponents(string: "\(baseURL)\(EBConstants.Endpoints.quotes)") else {
+            return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
+        }
+        
         components.queryItems = [
             URLQueryItem(name: "origin", value: "\(origin)"),
             URLQueryItem(name: "destination", value: "\(destination)"),
@@ -39,11 +46,22 @@ class APIManager: APIServiceProtocol {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
         
-        return session.dataTaskPublisher(for: url)
+        // Create URLRequest if needed (e.g., setting headers)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        // Add headers if required
+        // request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return session.dataTaskPublisher(for: request)
+            .retry(3) // Retry logic with 3 attempts
             .mapError { APIError.networkError($0) }
-            .flatMap(maxPublishers: .max(1)) { output in
-                self.handleResponse(output)
+            .flatMap { [weak self] output -> AnyPublisher<QuotesResponse, APIError> in
+                guard let self = self else {
+                    return Fail(error: APIError.unknown).eraseToAnyPublisher()
+                }
+                return self.handleResponse(output)
             }
+            .receive(on: DispatchQueue.main) // Ensure updates on main thread
             .eraseToAnyPublisher()
     }
     
@@ -55,11 +73,21 @@ class APIManager: APIServiceProtocol {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
         
-        return session.dataTaskPublisher(for: url)
+        // Create URLRequest if needed
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        // Add headers if required
+        
+        return session.dataTaskPublisher(for: request)
+            .retry(3) // Retry logic with 3 attempts
             .mapError { APIError.networkError($0) }
-            .flatMap(maxPublishers: .max(1)) { output in
-                self.handleResponse(output)
+            .flatMap { [weak self] output -> AnyPublisher<Trip, APIError> in
+                guard let self = self else {
+                    return Fail(error: APIError.unknown).eraseToAnyPublisher()
+                }
+                return self.handleResponse(output)
             }
+            .receive(on: DispatchQueue.main) // Ensure updates on main thread
             .eraseToAnyPublisher()
     }
     
@@ -80,14 +108,16 @@ class APIManager: APIServiceProtocol {
                 .mapError { APIError.decodingError($0) }
                 .eraseToAnyPublisher()
         case 400...499:
-            return Fail(error: APIError.clientError(response.statusCode)).eraseToAnyPublisher()
+            // Optionally decode API-specific error message
+            return Fail(error: APIError.clientError(statusCode: response.statusCode)).eraseToAnyPublisher()
         case 500...599:
-            return Fail(error: APIError.serverError(response.statusCode)).eraseToAnyPublisher()
+            return Fail(error: APIError.serverError(statusCode: response.statusCode)).eraseToAnyPublisher()
         default:
             return Fail(error: APIError.unexpectedStatusCode(response.statusCode)).eraseToAnyPublisher()
         }
     }
 }
+
 
 // MARK: - Custom Date Decoding Strategy
 extension JSONDecoder.DateDecodingStrategy {
@@ -96,18 +126,29 @@ extension JSONDecoder.DateDecodingStrategy {
             let container = try decoder.singleValueContainer()
             let dateString = try container.decode(String.self)
             
-            let isoFormatter = ISO8601DateFormatter()
-            isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds, .withColonSeparatorInTimeZone]
+            // Static formatters to improve performance
+            struct Formatter {
+                static let iso8601WithFractionalSeconds: ISO8601DateFormatter = {
+                    let formatter = ISO8601DateFormatter()
+                    formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds, .withColonSeparatorInTimeZone]
+                    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+                    return formatter
+                }()
+                
+                static let iso8601: ISO8601DateFormatter = {
+                    let formatter = ISO8601DateFormatter()
+                    formatter.formatOptions = [.withInternetDateTime, .withColonSeparatorInTimeZone]
+                    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+                    return formatter
+                }()
+            }
             
-            if let date = isoFormatter.date(from: dateString) {
+            if let date = Formatter.iso8601WithFractionalSeconds.date(from: dateString) {
+                return date
+            } else if let date = Formatter.iso8601.date(from: dateString) {
                 return date
             } else {
-                isoFormatter.formatOptions = [.withInternetDateTime, .withColonSeparatorInTimeZone]
-                if let date = isoFormatter.date(from: dateString) {
-                    return date
-                } else {
-                    throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
-                }
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
             }
         }
     }

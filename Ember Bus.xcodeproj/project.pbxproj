@@ -17,6 +17,9 @@
 		860D017E2CA23CC40098304C /* QuoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860D017D2CA23CC40098304C /* QuoteServiceProtocol.swift */; };
 		86209F0F2C99B0C400FAF134 /* EB+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86209F0E2C99B0C300FAF134 /* EB+UserDefaults.swift */; };
 		86209F112C99FFA300FAF134 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86209F102C99FFA300FAF134 /* Constants.swift */; };
+		8649C0EF2CA2C5F800A34754 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8649C0EE2CA2C5F800A34754 /* README.md */; };
+		8649C0F12CA2C6E600A34754 /* Project Outline.md in Resources */ = {isa = PBXBuildFile; fileRef = 8649C0F02CA2C6E600A34754 /* Project Outline.md */; };
+		8649C0F52CA2FB3E00A34754 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649C0F42CA2FB3E00A34754 /* DateExtensionTests.swift */; };
 		864D47F52C922ED3000850FE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D47F42C922ED3000850FE /* Log.swift */; };
 		864D47F72C9237BA000850FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D47F62C9237BA000850FE /* LocationManager.swift */; };
 		86565AF72C91B502008F0225 /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86565AF62C91B502008F0225 /* TripViewModel.swift */; };
@@ -70,6 +73,9 @@
 		860D017D2CA23CC40098304C /* QuoteServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteServiceProtocol.swift; sourceTree = "<group>"; };
 		86209F0E2C99B0C300FAF134 /* EB+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EB+UserDefaults.swift"; sourceTree = "<group>"; };
 		86209F102C99FFA300FAF134 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8649C0EE2CA2C5F800A34754 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8649C0F02CA2C6E600A34754 /* Project Outline.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Project Outline.md"; sourceTree = "<group>"; };
+		8649C0F42CA2FB3E00A34754 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		864D47F42C922ED3000850FE /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		864D47F62C9237BA000850FE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		86565AF62C91B502008F0225 /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 				868B9D392C9CB4EE003000BC /* NetworkMonitor.swift */,
 				868B9D3B2C9CB50F003000BC /* QuoteService.swift */,
 				860D017D2CA23CC40098304C /* QuoteServiceProtocol.swift */,
+				860D01752CA087D50098304C /* StopListView.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -157,6 +164,8 @@
 		86D2D8212C90B1E200AAAC01 = {
 			isa = PBXGroup;
 			children = (
+				8649C0EE2CA2C5F800A34754 /* README.md */,
+				8649C0F02CA2C6E600A34754 /* Project Outline.md */,
 				86D2D82C2C90B1E200AAAC01 /* Ember Bus */,
 				86D2D8432C90B1E900AAAC01 /* Ember BusTests */,
 				86D2D84D2C90B1E900AAAC01 /* Ember BusUITests */,
@@ -199,6 +208,7 @@
 				86D2D8692C90C3CC00AAAC01 /* EmberBusTripTests.swift */,
 				86D2D8652C90B86F00AAAC01 /* ExampleTrip.json */,
 				86D2D8672C90B89900AAAC01 /* ExampleQuotes.json */,
+				8649C0F42CA2FB3E00A34754 /* DateExtensionTests.swift */,
 			);
 			path = "Ember BusTests";
 			sourceTree = "<group>";
@@ -227,11 +237,10 @@
 			children = (
 				86D2D8752C91219900AAAC01 /* AppView.swift */,
 				86D2D8772C9121FB00AAAC01 /* SettingsView.swift */,
+				860D01772CA200150098304C /* ToastView.swift */,
 				86D2D86B2C90CB1F00AAAC01 /* BusMapView.swift */,
 				86D2D86D2C90CB5900AAAC01 /* BusAnnotationView.swift */,
 				86565AFA2C91B612008F0225 /* QuoteListView.swift */,
-				860D01752CA087D50098304C /* StopListView.swift */,
-				860D01772CA200150098304C /* ToastView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +368,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8649C0F12CA2C6E600A34754 /* Project Outline.md in Resources */,
+				8649C0EF2CA2C5F800A34754 /* README.md in Resources */,
 				86D2D83A2C90B1E800AAAC01 /* LaunchScreen.storyboard in Resources */,
 				86D2D8372C90B1E800AAAC01 /* Assets.xcassets in Resources */,
 			);
@@ -420,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D2D8452C90B1E900AAAC01 /* EmberBusQuotesTests.swift in Sources */,
+				8649C0F52CA2FB3E00A34754 /* DateExtensionTests.swift in Sources */,
 				86D2D86A2C90C3CC00AAAC01 /* EmberBusTripTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

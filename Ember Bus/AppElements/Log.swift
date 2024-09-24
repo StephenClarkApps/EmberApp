@@ -5,11 +5,6 @@
 //  Created by Stephen Clark on 11/09/2024.
 //
 
-/*
- This is a logging class based on my vague recollection of one I saw years ago. By using Emoji for debug classes it becomes easy to filter
- log information by type using the Filter options, filtering in a way similar to the way we might do in Android Studio.
- */
-
 import Foundation
 
 enum LogLevel: String {
@@ -19,8 +14,10 @@ enum LogLevel: String {
     case error = "❌ ERROR"
 }
 
+
+/// Class to provide better logging with the ability to filter by types or combinations of types of log message
 class Log {
-    static let shared = Log() // Using a singleton we might be able to justify if we do inject the class down the heirarchy 
+    static let shared = Log()
     
     private let dateFormatter: DateFormatter
     private let fileManager = FileManager.default

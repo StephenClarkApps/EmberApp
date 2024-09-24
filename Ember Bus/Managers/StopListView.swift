@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StopListView: View {
+    // MARK: - PROPERTIES
     let trip: Trip
     
     // Computed property to get upcoming stops
@@ -24,6 +25,7 @@ struct StopListView: View {
         }
     }
     
+    // MARK: - VIEW BODY
     var body: some View {
         Group {
             VStack(alignment: .leading, spacing: 16) {
@@ -116,7 +118,9 @@ struct StopListView: View {
         .navigationTitle("Bus Stop Timings")
     }
     
-    // Helper function to format dates
+    // MARK: - HELPER FUNCTIONS
+    
+    /// Helper function to format dates
     func formatTime(_ date: Date?) -> String {
         guard let date = date else { return "N/A" }
         let formatter = DateFormatter()

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Extenstion to provide centralised place to track values we are stroing to defaults
 extension UserDefaults {
 
     var autoDismissCallout: Bool {
