@@ -9,8 +9,11 @@ Tapping a trip takes the user to a map of the bus's location, and so for a curre
 Also on the same screen the user can see the seats, wheelchair and bike spots on the bus. 
 
 
-This app is programmed in Swift specifically using an approach based on SwiftUI and Combine, and leveraging an MVVM architecture. 
+This app is programmed in Swift using an approach based on SwiftUI and Combine, and leveraging an MVVM architecture. 
 
 The app was built using XCode Version 15.2.
 
 Target iOS version: 17.2 or later
+
+
+![Bus Map](screen-grab.jpg)
