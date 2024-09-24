@@ -10,7 +10,6 @@ import SwiftUI
 struct AppView: View {
   var body: some View {
     TabView {
-//      BusMapView()
         QuotesListView()
         .tabItem({
           Image(systemName: "bus.fill")

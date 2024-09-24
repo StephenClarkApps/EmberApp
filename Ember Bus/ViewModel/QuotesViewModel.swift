@@ -9,83 +9,99 @@ import Combine
 import SwiftUI
 
 class QuotesViewModel: ObservableObject {
+    // Published properties
     @Published var quotes: [Quote]?
     @Published var errorMessage: String?
-    @Published var selectedTrip: Trip? // Store selected trip
-    @Published var isLoading: Bool = false // Loading state
-    @Published var currentlySelectedUuid: String?
+    @Published var selectedTrip: Trip?
+    @Published var isLoading: Bool = false
+    @Published var isConnected: Bool = true
+    @Published var selectedTripUid: String?
 
     private var cancellables = Set<AnyCancellable>()
+    private let networkMonitor: any NetworkMonitoring
+    private let quoteService: QuoteServiceProtocol
 
+    init(networkMonitor: any NetworkMonitoring = NetworkMonitor(), quoteService: QuoteServiceProtocol = QuoteService()) {
+        self.networkMonitor = networkMonitor
+        self.quoteService = quoteService
+
+        // Observe network connectivity using the publisher
+        networkMonitor.isConnectedPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] connected in
+                self?.isConnected = connected
+                if !connected {
+                    self?.errorMessage = "No internet connection. Please check your network settings."
+                }
+            }
+            .store(in: &cancellables)
+    }
+
+    // Fetch quotes for the given origin and destination
     func fetchQuotes(for origin: Int, destination: Int) {
-        let now = Date()
-        let startOfToday = Calendar.current.startOfDay(for: now)
-        let endOfToday = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: now)!
+        guard isConnected else {
+            self.errorMessage = "No internet connection. Please check your network settings."
+            return
+        }
 
         isLoading = true
-        APIManager.shared.fetchQuotes(origin: origin, destination: destination, departureFrom: startOfToday, departureTo: endOfToday) { result in
-            DispatchQueue.main.async {
-                self.isLoading = false
-                switch result {
-                case .success(let quotesResponse):
-                    // Filter quotes where the trip has started today but will end in the future
-                    self.quotes = quotesResponse.quotes.filter { quote in
-                        guard let firstLeg = quote.legs.first else {
-                            return false
-                        }
-                        guard let tripStart = firstLeg.departure.scheduled, let tripEnd = firstLeg.arrival.scheduled else {
-                            return false
-                        }
-                        
-                        // The trip should have started today or before but end in the future
-                        return Calendar.current.isDate(tripStart, inSameDayAs: now) && tripEnd >= now
-                    }
+        let now = Date()
+        let startOfToday = Date.startOfToday
+        let endOfToday = Date.endOfToday
+
+        quoteService.fetchQuotes(origin: origin, destination: destination, departureFrom: startOfToday, departureTo: endOfToday)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.isLoading = false
+                switch completion {
+                case .finished:
+                    // Do nothing
+                    break
                 case .failure(let error):
-                    self.errorMessage = error.localizedDescription
+                    self?.errorMessage = error.localizedDescription
                 }
-            }
-        }
+            }, receiveValue: { [weak self] quotesResponse in
+                self?.quotes = quotesResponse.quotes.filter { quote in
+                    self?.isValidQuote(quote, currentDate: now) ?? false
+                }
+            })
+            .store(in: &cancellables)
     }
 
-
-    
+    // Fetch trip details for the selected trip UID
     func fetchTrip(for tripUid: String) {
-        self.currentlySelectedUuid = tripUid
+        guard isConnected else {
+            self.errorMessage = "No internet connection. Please check your network settings."
+            return
+        }
+
         isLoading = true
-        APIManager.shared.fetchTrip(tripId: tripUid) { result in
-            DispatchQueue.main.async {
-                self.isLoading = false
-                switch result {
-                case .success(let trip):
-                    self.selectedTrip = trip
+        self.selectedTripUid = tripUid // Store the selected trip UUID
+        quoteService.fetchTrip(tripId: tripUid)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.isLoading = false
+                switch completion {
+                case .finished:
+                    // Do nothing
+                    break
                 case .failure(let error):
-                    self.errorMessage = error.localizedDescription
+                    self?.errorMessage = error.localizedDescription
                 }
-            }
-        }
+            }, receiveValue: { [weak self] trip in
+                self?.selectedTrip = trip
+            })
+            .store(in: &cancellables)
     }
 
-    // Move helper functions here from the view
-    private func getStartOfDayTime(for hour: Int) -> Date {
-        let calendar = Calendar.current
-        let now = Date()
-        var components = calendar.dateComponents([.year, .month, .day], from: now)
-        components.hour = hour
-        components.minute = 0
-        return calendar.date(from: components) ?? now
-    }
+    // Validates if the quote is for today and hasn't already departed
+    private func isValidQuote(_ quote: Quote, currentDate: Date = Date()) -> Bool {
+        guard let firstLeg = quote.legs.first,
+              let tripStart = firstLeg.departure.scheduled,
+              let tripEnd = firstLeg.arrival.scheduled else { return false }
 
-    private func getTwoHoursAfterNowOrEndOfDay() -> Date {
-        let calendar = Calendar.current
-        let now = Date()
-        var twoHoursLater = calendar.date(byAdding: .hour, value: 2, to: now) ?? now
-
-        if !calendar.isDate(twoHoursLater, inSameDayAs: now) {
-            var endOfDayComponents = calendar.dateComponents([.year, .month, .day], from: now)
-            endOfDayComponents.hour = 23
-            endOfDayComponents.minute = 59
-            twoHoursLater = calendar.date(from: endOfDayComponents) ?? now
-        }
-        return twoHoursLater
+        return Calendar.current.isDate(tripStart, inSameDayAs: currentDate) && tripEnd >= currentDate
     }
 }
+
+

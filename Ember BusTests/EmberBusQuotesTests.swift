@@ -11,7 +11,7 @@ import XCTest
 
 final class EmberBusQuotesTests: XCTestCase {
 
-    private var quotes: Quotes!
+    private var quotes: QuotesResponse!
 
     override func setUpWithError() throws {
         // Covering our GIVEN -  Load the JSON data and decode it
@@ -25,7 +25,7 @@ final class EmberBusQuotesTests: XCTestCase {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            self.quotes = try decoder.decode(Quotes.self, from: data)
+            self.quotes = try decoder.decode(QuotesResponse.self, from: data)
         } catch {
             XCTFail("Failed to decode Quotes JSON: \(error.localizedDescription)")
         }

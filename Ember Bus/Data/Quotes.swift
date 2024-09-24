@@ -24,7 +24,7 @@
 import Foundation
 
 // MARK: - Quotes
-struct Quotes: Codable {
+struct QuotesResponse: Codable {
     let quotes: [Quote]
     let minCardTransaction: Int
 

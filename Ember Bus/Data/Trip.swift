@@ -46,7 +46,7 @@ struct Description: Codable {
 }
 
 // MARK: - Route
-struct Route: Codable {
+struct Route: Codable, Identifiable {
     let id: Int
     let departure, arrival: TripArrival?
     let location: Location
