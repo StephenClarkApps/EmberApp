@@ -39,10 +39,11 @@ struct QuotesListView: View {
                             }
                         }) {
                             QuoteRowView(quote: quote)
+                                .frame(maxWidth: .infinity, alignment: .leading) // Make the entire row tappable
+                                .contentShape(Rectangle()) // Ensure the full cell area is tappable
                         }
-                        .buttonStyle(PlainButtonStyle()) // Removes default button styling for a cleaner look
+                        .buttonStyle(PlainButtonStyle()) // Remove default button styling for a cleaner look
                     }
-                    .listStyle(PlainListStyle()) // Adjust list style for better aesthetics
                     .refreshable {
                         // Allows users to pull-to-refresh the list
                         quotesViewModel.fetchQuotes(for: 13, destination: 42)
